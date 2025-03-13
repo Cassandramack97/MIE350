@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # Backend Service (Spring Boot)
+  backend:
+    build: ./backend # Path to the backend directory
+    ports:
+      - "8081:8081" # Expose the backend on port 8081
+    networks:
+      - app-network # Use a custom network for communication
+    environment:
+      - SERVER_PORT = 8081
+
+  # Appsmith Service (Frontend)
+  appsmith:
+    image: appsmith/appsmith-ce:latest
+    ports:
+      - "80:80" # Expose the Appsmith frontend on port 80
+    environment:
+      - APPSMITH_API_URL=http://backend:8081 # Link Appsmith with backend
+    volumes: 
+      - ./appsmith-stacks:/appsmith-stacks
+      - ./appsmith-data:/appsmith-stacks/data
+    networks:
+    
+      - app-network # Use the same network to allow communication with the backend
+
+networks:
+  app-network:
+    driver: bridge
