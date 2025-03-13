@@ -2,6 +2,5 @@
 *.jar
 appsmith-stacks/
 appsmith-data/
-backend/target/
 *.log
 *.tmp
