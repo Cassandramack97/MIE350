@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 /**
  * Represents an item in the restaurant's inventory.
@@ -40,8 +41,13 @@ public class Product {
      */
     private double price;
 
+    //Refers to the relationship with suppliers, i.e what igredients are supplied by which suppliers
     @ManyToMany(mappedBy = "ingredientList")
     private List<Supplier> suppliers = new ArrayList<>();
+
+    //Refers to the igredients in a specific SupplierOrder
+    @OneToMany(mappedBy = "product") // Refers to the 'product' field in SupplierOrders
+    private List<SupplierOrder> orders = new ArrayList<>();
 
     /**
      * When the product will expire (if applicable). 
