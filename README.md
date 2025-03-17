@@ -113,8 +113,9 @@ RestaurantManagementSystem/
    ```
 3. Build and run:
    ```sh
-   mvn clean install
+   mvn clean spring-boot:run
    ```
+   
 4. The server starts on `http://localhost:8080`. Logs will show:
    ```
    H2 console available at '/h2-console'.
@@ -158,7 +159,6 @@ curl -X POST http://localhost:8080/api/inventory \
         "price": 1.5
       }'
 ```
-
 ---
 
 ## 9. Notes & Future Steps

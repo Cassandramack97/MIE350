@@ -5,7 +5,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
+import jakarta.persistence.ManyToMany;
 
 /**
  * Represents an item in the restaurant's inventory.
@@ -13,6 +17,7 @@ import java.time.LocalDate;
  * any supply item (e.g. napkins) depending on business needs.
  */
 @Entity
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -34,6 +39,9 @@ public class Product {
      * Price (per unit or per some consistent measure).
      */
     private double price;
+
+    @ManyToMany(mappedBy = "ingredientList")
+    private List<Supplier> suppliers = new ArrayList<>();
 
     /**
      * When the product will expire (if applicable). 
