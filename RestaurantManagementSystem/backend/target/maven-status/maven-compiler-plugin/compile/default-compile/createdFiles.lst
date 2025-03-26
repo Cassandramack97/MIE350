@@ -12,10 +12,13 @@ com\example\restaurant\service\DashboardService.class
 com\example\restaurant\controller\SupplierController.class
 com\example\restaurant\service\AnalyticsService.class
 com\example\restaurant\service\MenuService.class
+com\example\restaurant\model\CustomerOrder.class
 com\example\restaurant\controller\SupplierOrderController.class
 com\example\restaurant\model\Ingredient.class
 com\example\restaurant\model\Product.class
 com\example\restaurant\model\SupplierOrder.class
+com\example\restaurant\controller\CustomerOrderController.class
+com\example\restaurant\repository\CustomerOrderRepository.class
 com\example\restaurant\repository\SupplierOrderRepository.class
 com\example\restaurant\exception\ResourceNotFoundException.class
 com\example\restaurant\RestaurantManagementApplication.class

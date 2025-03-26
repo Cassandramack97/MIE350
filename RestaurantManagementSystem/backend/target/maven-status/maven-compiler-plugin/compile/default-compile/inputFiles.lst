@@ -1,5 +1,7 @@
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\config\WebConfig.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\CustomerOrderController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\MenuItemRepository.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\CustomerOrder.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\MenuItem.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\SupplierOrderController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\SupplierOrderService.java
@@ -7,6 +9,7 @@ C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\j
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\SupplierRepository.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\SupplierController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\Supplier.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\CustomerOrderRepository.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\MenuService.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\RestaurantManagementApplication.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\MenuItemIngredientKey.java
