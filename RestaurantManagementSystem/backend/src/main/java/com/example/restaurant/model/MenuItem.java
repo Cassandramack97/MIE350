@@ -5,11 +5,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a menu item (e.g., "Cheeseburger", "Veggie Pizza").
  */
 @Entity
+@Table(name = "menu_items")
 public class MenuItem {
 
     @Id
@@ -26,6 +31,12 @@ public class MenuItem {
      * Additional details or description (e.g. ingredients).
      */
     private String description;
+
+    /**
+     * Ingredients list
+     */
+    @OneToMany(mappedBy="menuItem")
+    private List<MenuItemIngredient> ingredients = new ArrayList<>();
 
     // --- Constructors ---
     public MenuItem() {
