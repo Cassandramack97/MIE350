@@ -1,5 +1,5 @@
 package com.example.restaurant.controller;
 
-public class MenuController {
-    
+public class MenuItemIngredientController {
+
 }

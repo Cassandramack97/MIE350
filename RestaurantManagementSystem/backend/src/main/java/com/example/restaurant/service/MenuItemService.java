@@ -1,5 +1,5 @@
 package com.example.restaurant.service;
 
-public class MenuService {
+public class MenuItemService {
     
 }
