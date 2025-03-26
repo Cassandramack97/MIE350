@@ -1,10 +1,11 @@
 package com.example.restaurant.controller;
 
 import com.example.restaurant.model.Ingredient;
-import com.example.restaurant.service.InventoryService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import com.example.restaurant.repository.IngredientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * A REST controller for managing inventory (Product entities).
@@ -33,7 +34,7 @@ public class IngredientController {
     Ingredient createIngredient(@RequestBody Ingredient newIngredient) {return repository.save(newIngredient);}
 
     @PutMapping("{id}")
-    Supplier updateSupplier(@RequestBody Ingredient newIngredient, @PathVariable("id") String ingredientId) {
+    Ingredient updateSupplier(@RequestBody Ingredient newIngredient, @PathVariable("id") String ingredientId) {
         return repository.findById(ingredientId)
                 .map(ingredient -> {
                     ingredient.setIngredientCode(newIngredient.getIngredientCode());
@@ -42,7 +43,7 @@ public class IngredientController {
                     return repository.save(ingredient);
                 })
                 .orElseGet(() -> {
-                    newIngredient.setId(ingredientId);
+                    newIngredient.setIngredientCode(ingredientId);
                     return repository.save(newIngredient);
                 });
     }

@@ -64,5 +64,5 @@ public class Ingredient {
 
     public String getMeasuredBy() {return measuredBy;}
 
-    public void setMeasuredBy(String measuredBy) {this.measuredBy = measuredBy}
+    public void setMeasuredBy(String measuredBy) {this.measuredBy = measuredBy;}
 }
