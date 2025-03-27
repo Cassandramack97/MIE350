@@ -4,9 +4,11 @@ com\example\restaurant\service\SupplierOrderService.class
 com\example\restaurant\repository\MenuItemIngredientRepository.class
 com\example\restaurant\controller\InventoryController.class
 com\example\restaurant\controller\MenuItemIngredientController.class
+com\example\restaurant\service\MenuItemService.class
 com\example\restaurant\service\InventoryService.class
 com\example\restaurant\controller\AnalyticsController.class
 com\example\restaurant\model\MenuItemIngredient.class
+com\example\restaurant\controller\IngredientController.class
 com\example\restaurant\service\SupplierService.class
 com\example\restaurant\controller\MenuItemController.class
 com\example\restaurant\repository\IngredientRepository.class
@@ -14,11 +16,13 @@ com\example\restaurant\model\Supplier.class
 com\example\restaurant\service\DashboardService.class
 com\example\restaurant\controller\SupplierController.class
 com\example\restaurant\service\AnalyticsService.class
-com\example\restaurant\service\MenuService.class
+com\example\restaurant\model\CustomerOrder.class
 com\example\restaurant\controller\SupplierOrderController.class
 com\example\restaurant\model\Ingredient.class
 com\example\restaurant\model\Product.class
 com\example\restaurant\model\SupplierOrder.class
+com\example\restaurant\controller\CustomerOrderController.class
+com\example\restaurant\repository\CustomerOrderRepository.class
 com\example\restaurant\repository\SupplierOrderRepository.class
 com\example\restaurant\exception\ResourceNotFoundException.class
 com\example\restaurant\RestaurantManagementApplication.class
