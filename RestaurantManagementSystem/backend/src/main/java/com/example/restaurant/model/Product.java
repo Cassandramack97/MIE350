@@ -1,16 +1,10 @@
 package com.example.restaurant.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Represents an item in the restaurant's inventory.
@@ -41,11 +35,12 @@ public class Product {
      */
     private double price;
 
-    //Refers to the relationship with suppliers, i.e what igredients are supplied by which suppliers
-    @ManyToMany(mappedBy = "ingredientList")
-    private List<Supplier> suppliers = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "ingredient_code", nullable = false)
+    @JsonBackReference("ingredient-products")
+    private Ingredient ingredient;
 
-    //Refers to the igredients in a specific SupplierOrder
+    //Refers to the products in a specific SupplierOrder
     @OneToMany(mappedBy = "product") // Refers to the 'product' field in SupplierOrders
     private List<SupplierOrder> orders = new ArrayList<>();
 
@@ -60,11 +55,12 @@ public class Product {
         // Default constructor for JPA
     }
 
-    public Product(String name, int quantity, double price, LocalDate expiryDate) {
+    public Product(String name, int quantity, double price, LocalDate expiryDate, Ingredient ingredient) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.expiryDate = expiryDate;
+        this.ingredient = ingredient;
     }
 
     // --- Getters & Setters ---
@@ -73,7 +69,6 @@ public class Product {
         return id;
     }
 
-    // No setter for id if you want to prevent manual ID assignment.
     public void setId(Long id) {
         this.id = id;
     }
@@ -109,4 +104,9 @@ public class Product {
     public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    public Ingredient getIngredient() {return ingredient;}
+
+    public void setIngredient(Ingredient ingredient) {this.ingredient = ingredient; }
+
 }

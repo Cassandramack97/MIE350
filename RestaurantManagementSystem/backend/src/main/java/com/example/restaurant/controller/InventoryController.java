@@ -2,6 +2,7 @@ package com.example.restaurant.controller;
 
 import com.example.restaurant.model.Product;
 import com.example.restaurant.service.InventoryService;
+import com.example.restaurant.repository.ProductRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +15,10 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class InventoryController {
 
-    private final InventoryService inventoryService;
+    private final ProductRepository repository;
 
-    public InventoryController(InventoryService inventoryService) {
-        this.inventoryService = inventoryService;
+    public InventoryController(ProductRepository repository) {
+        this.repository = repository;
     }
 
     /**
@@ -26,54 +27,51 @@ public class InventoryController {
      */
     @GetMapping
     public List<Product> getAllProducts() {
-        return inventoryService.getAllProducts();
+        return repository.findAll();
     }
 
     /**
      * GET /api/inventory/{id}
-     * Returns a specific product by ID, or 404 if not found.
+     * Returns a specific product by ID
      */
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable Long id) {
-        Product product = inventoryService.getProductById(id);
-        if (product == null) {
-            // In a real-world app, you'd throw an exception or return a ResponseEntity
-            throw new RuntimeException("Product not found with id: " + id);
-        }
-        return product;
-    }
+    public Product getProduct(@PathVariable Long id) {return repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));  }
 
     /**
      * POST /api/inventory
      * Creates a new product from JSON in the request body.
      */
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
-        return inventoryService.createProduct(product);
-    }
+    Product createProduct(@RequestBody Product newProduct) {return repository.save(newProduct);}
 
     /**
      * PUT /api/inventory/{id}
      * Updates an existing product's fields by ID.
      */
-    @PutMapping("/{id}")
-    public Product updateProduct(@PathVariable Long id, @RequestBody Product updated) {
-        Product product = inventoryService.updateProduct(id, updated);
-        if (product == null) {
-            throw new RuntimeException("Failed to update. Product not found with id: " + id);
-        }
-        return product;
+    @PutMapping("{id}")
+    public Product createProduct(@RequestBody Product newProduct, @PathVariable("id") Long productId) {
+
+        return repository.findById(productId)
+                .map(product -> {
+                    product.setName(newProduct.getName());
+                    product.setQuantity(newProduct.getQuantity());
+                    product.setPrice(newProduct.getPrice());
+                    product.setExpiryDate(newProduct.getExpiryDate());
+                    product.setIngredient(newProduct.getIngredient());
+                    return repository.save(product);
+                })
+                .orElseGet(() -> {
+                    newProduct.setId(productId);
+                    return repository.save(newProduct);
+                });
     }
 
     /**
      * DELETE /api/inventory/{id}
      * Deletes a product by ID.
      */
-    @DeleteMapping("/{id}")
-    public void deleteProduct(@PathVariable Long id) {
-        boolean deleted = inventoryService.deleteProduct(id);
-        if (!deleted) {
-            throw new RuntimeException("Could not delete. Product not found with id: " + id);
-        }
-    }
+    @DeleteMapping("{id}")
+    public void deleteProduct(@PathVariable("id") Long productId) { repository.deleteById(productId);}
+
 }

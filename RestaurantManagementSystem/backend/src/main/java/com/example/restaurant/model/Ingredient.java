@@ -30,10 +30,18 @@ public class Ingredient {
     @Column(nullable = false)
     private String name;
 
-
     @OneToMany(mappedBy="ingredient")
-    @JsonManagedReference
+    @JsonManagedReference("ingredient-menuItemIngredient")
     private List<MenuItemIngredient> menuItems = new ArrayList<>();
+
+    //Refers to the different product entities that are of this ingredient type
+    @OneToMany(mappedBy="ingredient")
+    @JsonManagedReference("ingredient-products")
+    private List<Product> products = new ArrayList<>();
+
+    //Refers to the relationship with suppliers, i.e what ingredients are supplied by which suppliers
+    @ManyToMany(mappedBy = "ingredientList")
+    private List<Supplier> suppliers = new ArrayList<>();
 
     // --- Constructors ---
     public Ingredient() {
@@ -70,4 +78,8 @@ public class Ingredient {
     public void setMenuItems(List<MenuItemIngredient> menuItems) {
         this.menuItems = menuItems;
     }
+
+    public List<Product> getProducts(){ return products; }
+
+    public void setProducts(List<Product> products) {this.products = products;  }
 }

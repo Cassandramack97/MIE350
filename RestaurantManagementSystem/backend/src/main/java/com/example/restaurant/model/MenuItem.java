@@ -40,7 +40,7 @@ public class MenuItem {
      * Ingredients list
      */
     @OneToMany(mappedBy="menuItem")
-    @JsonManagedReference
+    @JsonManagedReference("menuItem-menuItemIngredient")
     private List<MenuItemIngredient> ingredients = new ArrayList<>();
 
     // --- Constructors ---

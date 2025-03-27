@@ -28,9 +28,9 @@ public class Supplier {
 
     //List of ingredients provided by the supplier
     @ManyToMany
-    @JoinTable(name = "suppliers_products",
+    @JoinTable(name = "suppliers_ingredients",
             joinColumns = @JoinColumn(name = "supplier_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
+            inverseJoinColumns = @JoinColumn(name = "ingredient_code"))
     private List<Product> ingredientList;
 
     //Minimum order size
