@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/customerOrder")
 @CrossOrigin(origins = "*")
 public class CustomerOrderController {
-    @Autowired
+
     private final CustomerOrderRepository repository;
 
-    @Autowired
+
     private final MenuItemRepository menuItemRepository;
 
     public CustomerOrderController(CustomerOrderRepository repository, MenuItemRepository menuItemRepository) {

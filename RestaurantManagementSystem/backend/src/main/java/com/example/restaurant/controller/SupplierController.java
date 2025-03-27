@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/suppliers")
 @CrossOrigin(origins = "*")
 public class SupplierController {
-    @Autowired
+
     private final SupplierRepository repository;
 
-    @Autowired
     private final IngredientRepository ingredientRepository;
 
     public SupplierController(SupplierRepository repository, IngredientRepository ingredientRepository) {

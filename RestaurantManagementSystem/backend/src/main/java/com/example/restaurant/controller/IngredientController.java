@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class IngredientController {
 
-    @Autowired
     private final IngredientRepository repository;
 
     public IngredientController(IngredientRepository repository) {this.repository = repository;}

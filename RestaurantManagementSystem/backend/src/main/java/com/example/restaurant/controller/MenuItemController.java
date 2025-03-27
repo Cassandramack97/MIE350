@@ -17,13 +17,10 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class MenuItemController {
 
-    @Autowired
     private MenuItemRepository menuItemRepository;
 
-    @Autowired
     private IngredientRepository ingredientRepository;
 
-    @Autowired
     private MenuItemIngredientRepository menuItemIngredientRepository;
 
     @GetMapping
