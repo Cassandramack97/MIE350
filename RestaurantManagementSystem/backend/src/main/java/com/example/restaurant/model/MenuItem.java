@@ -32,6 +32,8 @@ public class MenuItem {
      */
     private String description;
 
+    private Double price;
+
     /**
      * Ingredients list
      */
@@ -43,9 +45,10 @@ public class MenuItem {
         // Default constructor
     }
 
-    public MenuItem(String itemName, String description) {
+    public MenuItem(String itemName, String description, Double price) {
         this.itemName = itemName;
         this.description = description;
+        this.price = price;
     }
 
     // --- Getters & Setters ---
@@ -69,4 +72,8 @@ public class MenuItem {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Double getPrice() {return price;}
+
+    public void setPrice(Double price) {this.price = price;}
 }
