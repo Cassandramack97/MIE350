@@ -32,7 +32,8 @@ VALUES ('Pasta', 'Pasta');
 -- Menu Items
 INSERT INTO menu_items (id, name, description, price) VALUES
 (1111, 'Grilled Chicken Salad', 'Healthy grilled chicken with fresh greens and dressing', 12.99),
-(2222, 'Classic Pasta', 'Pasta with meat and tomatoe sauce', 9.50);
+(2222, 'Classic Pasta', 'Pasta with meat and tomatoe sauce', 9.50),
+(3333, 'Fried Egg', 'Fried egg with a glass of milk', 8.00);
 
 -- Menu Item Ingredients (Join Table)
 INSERT INTO menu_item_ingredients (menu_item_id, ingredient_code, quantity, unit) VALUES
@@ -44,7 +45,10 @@ INSERT INTO menu_item_ingredients (menu_item_id, ingredient_code, quantity, unit
 -- Meat Pasta
 (2222, 'Tomatoe', 2, 'whole'),
 (2222, 'Pasta', 300, 'grams'),
-(2222, 'Beef', 200, 'grams');
+(2222, 'Beef', 200, 'grams'),
+-- Fried Egg
+(3333, 'Eggs', 1, 'whole'),
+(3333, 'Milk', 1, 'whole');
 
 -- PRODUCTS
 -- 1. A normal product (not running low, not expiring soon)

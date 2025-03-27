@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-
-import com.example.restaurant.model.Product;
 import com.example.restaurant.repository.ProductRepository;
-
+import com.example.restaurant.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 /**
  * A service class to manage Product (inventory) data.
  * Provides common CRUD methods and business logic as needed.
@@ -70,5 +70,47 @@ public class InventoryService {
         }
         productRepository.deleteById(id);
         return true;
+    }
+
+    @Transactional
+    public void deductIngredientsFromInventory(CustomerOrder customerOrder) {
+        // Get the menu item from the order
+        MenuItem menuItem = customerOrder.getMenuItem();
+
+        // Get the ingredients for this menu item
+        List<MenuItemIngredient> menuItemIngredients = menuItem.getIngredients();
+
+        // Process each ingredient
+        for (MenuItemIngredient menuItemIngredient : menuItemIngredients) {
+            Ingredient ingredient = menuItemIngredient.getIngredient();
+            double requiredQuantity = menuItemIngredient.getQuantity() * customerOrder.getQuantity();
+
+            // Get all products for this ingredient, sorted by expiry date
+            List<Product> ingredientProducts = productRepository.findByIngredientOrderByExpiryDateAsc(ingredient);
+
+            // Check if we have enough inventory
+            double totalAvailableQuantity = ingredientProducts.stream()
+                    .mapToDouble(Product::getQuantity)
+                    .sum();
+
+            if (totalAvailableQuantity < requiredQuantity) {
+                throw new IllegalArgumentException("Insufficient inventory for ingredient: " + ingredient.getName());
+            }
+
+            // Deduct from products, starting with those closest to expiry
+            for (Product product : ingredientProducts) {
+                if (requiredQuantity <= 0) break;
+
+                // Deduct from this product
+                int availableInProduct = product.getQuantity();
+                int quantityToDeduct = Math.min(availableInProduct, (int)requiredQuantity);
+
+                product.setQuantity(availableInProduct - quantityToDeduct);
+                productRepository.save(product);
+
+                // Reduce required quantity
+                requiredQuantity -= quantityToDeduct;
+            }
+        }
     }
 }

@@ -23,6 +23,12 @@ public class MenuItemController {
 
     private MenuItemIngredientRepository menuItemIngredientRepository;
 
+    public MenuItemController(MenuItemRepository menuItemRepository, IngredientRepository ingredientRepository, MenuItemIngredientRepository menuItemIngredientRepository ) {
+        this.menuItemRepository = menuItemRepository;
+        this.ingredientRepository = ingredientRepository;
+        this.menuItemIngredientRepository = menuItemIngredientRepository;
+    }
+
     @GetMapping
     public List<MenuItem> getAllMenuItems() {
         return menuItemRepository.findAll();
