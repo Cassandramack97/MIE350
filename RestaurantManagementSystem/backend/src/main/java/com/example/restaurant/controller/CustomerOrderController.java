@@ -39,6 +39,7 @@ public class CustomerOrderController {
                 .map(customerOrder -> {
                     customerOrder.setMenuItem(newCustomerOrder.getMenuItem());
                     customerOrder.setDate(newCustomerOrder.getDate());
+                    customerOrder.setQuantity(newCustomerOrder.getQuantity());
                     return repository.save(customerOrder);
                 })
                 .orElseGet(() -> {

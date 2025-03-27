@@ -18,12 +18,16 @@ public class CustomerOrder {
     @Column(name = "DATE", nullable = false)
     private LocalDate date;
 
+    @Column(name = "QUANTITY", nullable = false)
+    private Integer quantity;
+
     public CustomerOrder() {}
 
-    public CustomerOrder(Long id, MenuItem menuItem, LocalDate date) {
+    public CustomerOrder(Long id, MenuItem menuItem, LocalDate date, int Quantity) {
         this.id = id;
         this.menuItem = menuItem;
         this.date = date;
+        this.quantity = quantity;
     }
 
     // Getters and Setters
@@ -49,5 +53,10 @@ public class CustomerOrder {
 
     public void setDate(LocalDate date) { this.date = date;
     }
-    // Cost Calculation (Price * Quantity for each product)
+
+    public Integer getQuantity() {return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {this.quantity = quantity;
+    }
 }
