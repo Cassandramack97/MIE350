@@ -1,12 +1,15 @@
 com\example\restaurant\repository\ProductRepository.class
 com\example\restaurant\repository\SupplierRepository.class
 com\example\restaurant\service\SupplierOrderService.class
+com\example\restaurant\repository\MenuItemIngredientRepository.class
 com\example\restaurant\controller\InventoryController.class
-com\example\restaurant\controller\MenuController.class
+com\example\restaurant\controller\MenuItemIngredientController.class
 com\example\restaurant\service\InventoryService.class
 com\example\restaurant\controller\AnalyticsController.class
 com\example\restaurant\model\MenuItemIngredient.class
 com\example\restaurant\service\SupplierService.class
+com\example\restaurant\controller\MenuItemController.class
+com\example\restaurant\repository\IngredientRepository.class
 com\example\restaurant\model\Supplier.class
 com\example\restaurant\service\DashboardService.class
 com\example\restaurant\controller\SupplierController.class
