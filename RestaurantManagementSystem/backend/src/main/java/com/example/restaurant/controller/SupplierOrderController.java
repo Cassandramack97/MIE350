@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/supplierOrder")
-@CrossOrigin(origins = "http://backend:8081")
+@CrossOrigin(origins = "*")
 public class SupplierOrderController {
     @Autowired
     private final SupplierOrderRepository repository;

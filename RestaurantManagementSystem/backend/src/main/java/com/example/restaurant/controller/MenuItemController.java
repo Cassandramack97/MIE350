@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/menu-items")
+@CrossOrigin(origins = "*")
 public class MenuItemController {
 
     @Autowired

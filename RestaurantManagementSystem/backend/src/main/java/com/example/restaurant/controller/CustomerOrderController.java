@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/customerOrder")
-@CrossOrigin(origins = "http://backend:8081")
+@CrossOrigin(origins = "*")
 public class CustomerOrderController {
     @Autowired
     private final CustomerOrderRepository repository;
@@ -22,7 +22,6 @@ public class CustomerOrderController {
         this.repository = repository;
         this.menuItemRepository = menuItemRepository;
     }
-
 
     @GetMapping
     public List<CustomerOrder> retrieveAllCustomerOrders() {

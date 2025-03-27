@@ -16,7 +16,7 @@ import com.example.restaurant.service.InventoryService;
 
 @RestController
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = "http://backend:8081")
+@CrossOrigin(origins = "*")
 public class DashboardController {
 
     private final InventoryService inventoryService;
