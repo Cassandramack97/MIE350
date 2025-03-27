@@ -10,11 +10,14 @@ com\example\restaurant\controller\AnalyticsController.class
 com\example\restaurant\model\MenuItemIngredient.class
 com\example\restaurant\controller\IngredientController.class
 com\example\restaurant\service\SupplierService.class
+com\example\restaurant\dto\MenuItemDto.class
 com\example\restaurant\controller\MenuItemController.class
 com\example\restaurant\repository\IngredientRepository.class
 com\example\restaurant\model\Supplier.class
 com\example\restaurant\service\DashboardService.class
 com\example\restaurant\controller\SupplierController.class
+com\example\restaurant\dto\IngredientDto.class
+com\example\restaurant\dto\MenuItemIngredientDto.class
 com\example\restaurant\service\AnalyticsService.class
 com\example\restaurant\model\CustomerOrder.class
 com\example\restaurant\controller\SupplierOrderController.class

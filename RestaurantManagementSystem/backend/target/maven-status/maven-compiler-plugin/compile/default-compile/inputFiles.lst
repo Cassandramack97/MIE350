@@ -7,11 +7,13 @@ C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\j
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\MenuItem.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\SupplierOrderController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\SupplierOrderService.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\dto\MenuItemDto.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\AnalyticsService.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\SupplierRepository.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\SupplierController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\Supplier.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\CustomerOrderRepository.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\dto\IngredientDto.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\RestaurantManagementApplication.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\MenuItemIngredientKey.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\DashboardService.java
@@ -25,6 +27,7 @@ C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\j
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\MenuItemIngredient.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\Ingredient.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\model\Product.java
+C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\dto\MenuItemIngredientDto.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\controller\InventoryController.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\repository\SupplierOrderRepository.java
 C:\Users\danie\IdeaProjects\MIE350\RestaurantManagementSystem\backend\src\main\java\com\example\restaurant\service\MenuItemService.java
