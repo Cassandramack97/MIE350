@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,7 @@ public class MenuItem {
      * Display name for the menu item (e.g. "Cheeseburger").
      */
     @Column(nullable = false)
-    private String itemName;
+    private String name;
 
     /**
      * Additional details or description (e.g. ingredients).
@@ -38,6 +40,7 @@ public class MenuItem {
      * Ingredients list
      */
     @OneToMany(mappedBy="menuItem")
+    @JsonManagedReference
     private List<MenuItemIngredient> ingredients = new ArrayList<>();
 
     // --- Constructors ---
@@ -45,8 +48,8 @@ public class MenuItem {
         // Default constructor
     }
 
-    public MenuItem(String itemName, String description, Double price) {
-        this.itemName = itemName;
+    public MenuItem(String name, String description, Double price) {
+        this.name = name;
         this.description = description;
         this.price = price;
     }
@@ -57,12 +60,12 @@ public class MenuItem {
         return id;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -76,4 +79,12 @@ public class MenuItem {
     public Double getPrice() {return price;}
 
     public void setPrice(Double price) {this.price = price;}
+
+    public List<MenuItemIngredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<MenuItemIngredient> ingredients) {
+        this.ingredients = ingredients;
+    }
 }

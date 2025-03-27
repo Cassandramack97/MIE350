@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 /**
  * Represents an ingredient item. Parent to product.
@@ -28,9 +30,9 @@ public class Ingredient {
     @Column(nullable = false)
     private String name;
 
-    private String measuredBy;
 
     @OneToMany(mappedBy="ingredient")
+    @JsonManagedReference
     private List<MenuItemIngredient> menuItems = new ArrayList<>();
 
     // --- Constructors ---
@@ -38,10 +40,9 @@ public class Ingredient {
         // Default constructor for JPA
     }
 
-    public Ingredient(String ingredientCode, String name, String measuredBy) {
+    public Ingredient(String ingredientCode, String name) {
         this.ingredientCode = ingredientCode;
         this.name = name;
-        this.measuredBy = measuredBy;
     }
 
     // --- Getters & Setters ---
@@ -62,7 +63,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public String getMeasuredBy() {return measuredBy;}
+    public List<MenuItemIngredient> getMenuItems() {
+        return menuItems;
+    }
 
-    public void setMeasuredBy(String measuredBy) {this.measuredBy = measuredBy;}
+    public void setMenuItems(List<MenuItemIngredient> menuItems) {
+        this.menuItems = menuItems;
+    }
 }

@@ -1,3 +1,51 @@
+--INGREDIENTS
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Tomatoe', 'Tomatoe');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Lettuce', 'Lettuce');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Milk', 'Milk');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Eggs', 'Eggs');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Cheese', 'Cheese');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Bread', 'Bread');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Chicken', 'Chicken');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Beef', 'Beef');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Rice', 'Rice');
+
+INSERT INTO INGREDIENTS (INGREDIENT_CODE, NAME)
+VALUES ('Pasta', 'Pasta');
+
+-- Menu Items
+INSERT INTO menu_items (id, name, description, price) VALUES
+(1111, 'Grilled Chicken Salad', 'Healthy grilled chicken with fresh greens and dressing', 12.99),
+(2222, 'Classic Pasta', 'Pasta with meat and tomatoe sauce', 9.50);
+
+-- Menu Item Ingredients (Join Table)
+INSERT INTO menu_item_ingredients (menu_item_id, ingredient_code, quantity, unit) VALUES
+-- Grilled Chicken Salad
+(1111, 'Chicken', 200, 'grams'),
+(1111, 'Tomatoe', 150, 'grams'),
+(1111, 'Lettuce', 75, 'grams'),
+(1111, 'Eggs', 2, 'whole'),
+-- Meat Pasta
+(2222, 'Tomatoe', 2, 'whole'),
+(2222, 'Pasta', 300, 'grams'),
+(2222, 'Beef', 200, 'grams');
+
 -- PRODUCTS
 -- 1. A normal product (not running low, not expiring soon)
 INSERT INTO PRODUCTS (NAME, QUANTITY, PRICE, EXPIRY_DATE)
@@ -50,3 +98,5 @@ VALUES (1, 1);
 --SUPPLIER_ORDER
 INSERT INTO SUPPLIER_ORDER (SUPPLIER_ID, PRODUCT_ID, QUANTITY, STATUS, DATE_PLACED, DATE_DELIVERED)
 VALUES (1, 1, 20, 'Pending', '2025-02-14', '2025-02-17');
+
+

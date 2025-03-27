@@ -3,8 +3,7 @@ import com.example.restaurant.dto.MenuItemIngredientDto;
 import java.util.List;
 
 public class MenuItemDto {
-    private Long id;
-    private String itemName;
+    private String name;
     private String description;
     private Double price;
     private List<MenuItemIngredientDto> ingredients;
@@ -12,21 +11,16 @@ public class MenuItemDto {
     // Constructor
     public MenuItemDto() {}
 
-    public MenuItemDto(Long id, String itemName, String description, Double price, List<MenuItemIngredientDto> ingredients) {
-        this.id = id;
-        this.itemName = itemName;
+    public MenuItemDto(String name, String description, Double price, List<MenuItemIngredientDto> ingredients) {
+        this.name = name;
         this.description = description;
         this.price = price;
         this.ingredients = ingredients;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -39,13 +33,9 @@ public class MenuItemDto {
 
     public List<MenuItemIngredientDto> getIngredients() {return ingredients;}
 
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setDescription(String description) {

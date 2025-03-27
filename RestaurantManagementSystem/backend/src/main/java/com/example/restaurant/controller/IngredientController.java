@@ -39,7 +39,6 @@ public class IngredientController {
                 .map(ingredient -> {
                     ingredient.setIngredientCode(newIngredient.getIngredientCode());
                     ingredient.setName(newIngredient.getName());
-                    ingredient.setMeasuredBy(newIngredient.getMeasuredBy());
                     return repository.save(ingredient);
                 })
                 .orElseGet(() -> {
