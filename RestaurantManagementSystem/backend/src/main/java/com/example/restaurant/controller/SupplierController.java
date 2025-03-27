@@ -1,8 +1,11 @@
 package com.example.restaurant.controller;
 
 import java.util.List;
+import java.util.ArrayList;
 import com.example.restaurant.model.Supplier;
+import com.example.restaurant.model.Ingredient;
 import com.example.restaurant.repository.SupplierRepository;
+import com.example.restaurant.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +16,14 @@ public class SupplierController {
     @Autowired
     private final SupplierRepository repository;
 
-    public SupplierController(SupplierRepository repository) {this.repository = repository;}
+    @Autowired
+    private final IngredientRepository ingredientRepository;
+
+    public SupplierController(SupplierRepository repository, IngredientRepository ingredientRepository) {
+        this.repository = repository;
+        this.ingredientRepository = ingredientRepository;
+
+    }
 
     @GetMapping
     List<Supplier> retriveAllSuppliers() {return repository.findAll();}
@@ -30,25 +40,52 @@ public class SupplierController {
         return repository.searchName(name);
     }
 
+    // POST Mapping to create a new supplier
     @PostMapping
-    Supplier createSupplier(@RequestBody Supplier newSupplier) {return repository.save(newSupplier);}
+    public Supplier createSupplier(@RequestBody Supplier supplier) {
+        // Retrieve the full ingredient objects by their codes
+        List<Ingredient> ingredients = new ArrayList<>();
+        for (Ingredient tempIngredient : supplier.getIngredientList()) {
+            String ingredientCode = tempIngredient.getIngredientCode();
+            Ingredient ingredient = ingredientRepository.findById(ingredientCode)
+                    .orElseThrow(() -> new RuntimeException("Ingredient not found: " + ingredientCode));
+            ingredients.add(ingredient);
+        }
+        // Set the full ingredient objects to the supplier
+        supplier.setIngredientList(ingredients);
 
-    @PutMapping("{id}")
-    Supplier updateSupplier(@RequestBody Supplier newSupplier, @PathVariable("id") Long supplierId) {
-        return repository.findById(supplierId)
-                .map(supplier -> {
-                    supplier.setName(newSupplier.getName());
-                    supplier.setContactInfo(newSupplier.getContactInfo());
-                    supplier.setIngredientList(newSupplier.getIngredientList());
-                    supplier.setMinimumOrder(newSupplier.getMinimumOrder());
-                    supplier.setDeliveryTime(newSupplier.getDeliveryTime());
-                    supplier.setDescription(newSupplier.getDescription());
-                    return repository.save(supplier);
-                })
-                .orElseGet(() -> {
-                    newSupplier.setId(supplierId);
-                    return repository.save(newSupplier);
-                });
+        // Save and return the supplier
+        return repository.save(supplier);
+    }
+
+    // PUT Mapping to update an existing supplier
+    @PutMapping("/{id}")
+    public Supplier updateSupplier(@PathVariable Long id, @RequestBody Supplier supplier) {
+        // Find the existing supplier
+        Supplier existingSupplier = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Supplier not found"));
+
+        // Retrieve the full ingredient objects by their codes
+        List<Ingredient> ingredients = new ArrayList<>();
+        for (Ingredient tempIngredient : supplier.getIngredientList()) {
+            String ingredientCode = tempIngredient.getIngredientCode();
+            Ingredient ingredient = ingredientRepository.findById(ingredientCode)
+                    .orElseThrow(() -> new RuntimeException("Ingredient not found: " + ingredientCode));
+            ingredients.add(ingredient);
+        }
+
+        // Set the full ingredient objects to the supplier
+        existingSupplier.setIngredientList(ingredients);
+
+        // Update other fields as necessary
+        existingSupplier.setName(supplier.getName());
+        existingSupplier.setContactInfo(supplier.getContactInfo());
+        existingSupplier.setMinimumOrder(supplier.getMinimumOrder());
+        existingSupplier.setDeliveryTime(supplier.getDeliveryTime());
+        existingSupplier.setDescription(supplier.getDescription());
+
+        // Save and return the updated supplier
+        return repository.save(existingSupplier);
     }
 
     @DeleteMapping("{id}")

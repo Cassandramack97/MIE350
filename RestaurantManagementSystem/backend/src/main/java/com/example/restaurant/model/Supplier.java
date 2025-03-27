@@ -31,7 +31,7 @@ public class Supplier {
     @JoinTable(name = "suppliers_ingredients",
             joinColumns = @JoinColumn(name = "supplier_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredient_code"))
-    private List<Product> ingredientList;
+    private List<Ingredient> ingredientList;
 
     //Minimum order size
     @Column(name = "MINIMUM_ORDER")
@@ -45,7 +45,7 @@ public class Supplier {
     @Column(name = "DESCRIPTION", length = 500)
     private String description;
 
-    public Supplier(Long id, String name, String contactInfo, List<Product> ingredientList) {
+    public Supplier(Long id, String name, String contactInfo, List<Ingredient> ingredientList) {
         this.id = id;
         this.name = name;
         this.contactInfo = contactInfo;
@@ -54,7 +54,7 @@ public class Supplier {
     
     public Supplier() {}
     
-    public Supplier(Long id, String name, String contactInfo, List <Product> ingredientList, Integer minimumOrder, Integer deliveryTime, String description) {
+    public Supplier(Long id, String name, String contactInfo, List <Ingredient> ingredientList, Integer minimumOrder, Integer deliveryTime, String description) {
         this.id = id;
         this.name = name; 
         this.contactInfo = contactInfo; 
@@ -77,7 +77,7 @@ public class Supplier {
         return contactInfo;
     }
 
-    public List<Product> getIngredientList() {
+    public List<Ingredient> getIngredientList() {
         return ingredientList;
     }
 
@@ -106,7 +106,7 @@ public class Supplier {
         this.contactInfo = contactInfo;
     }
 
-    public void setIngredientList(List<Product> ingredientList) {
+    public void setIngredientList(List<Ingredient> ingredientList) {
         this.ingredientList = ingredientList;
     }
 
