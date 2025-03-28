@@ -9,7 +9,7 @@ services:
     networks:
       - app-network # Use a custom network for communication
     environment:
-      - SERVER_PORT = 8081
+      - SERVER_PORT=8081
 
   # Appsmith Service (Frontend)
   appsmith:
@@ -18,11 +18,11 @@ services:
       - "80:80" # Expose the Appsmith frontend on port 80
     environment:
       - APPSMITH_API_URL=http://backend:8081 # Link Appsmith with backend
-    volumes: 
+    volumes:
       - ./appsmith-stacks:/appsmith-stacks
       - ./appsmith-data:/appsmith-stacks/data
     networks:
-    
+
       - app-network # Use the same network to allow communication with the backend
 
 networks:
