@@ -8,6 +8,8 @@ import com.example.restaurant.repository.ProductRepository;
 import com.example.restaurant.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import java.time.LocalDate;
+
 /**
  * A service class to manage Product (inventory) data.
  * Provides common CRUD methods and business logic as needed.
@@ -112,5 +114,20 @@ public class InventoryService {
                 requiredQuantity -= quantityToDeduct;
             }
         }
+    }
+
+    @Transactional
+    public int removeExpiredAndEmptyProducts() {
+        LocalDate today = LocalDate.now();
+
+        // Find products that are expired or have zero quantity
+        List<Product> productsToRemove = productRepository.findByExpiryDateBeforeOrQuantityEquals(today, 0);
+
+        int count = productsToRemove.size();
+
+        // Remove the products
+        productRepository.deleteAll(productsToRemove);
+
+        return count;
     }
 }

@@ -96,108 +96,108 @@ INSERT INTO menu_item_ingredients (menu_item_id, ingredient_code, quantity, unit
 -- PRODUCTS
 INSERT INTO PRODUCTS (NAME, QUANTITY, PRICE, EXPIRY_DATE, INGREDIENT_CODE) VALUES
 -- Tomatoes (3 entries)
-('Tomatoes', 45, 2.99, '2025-03-15', 'Tomatoe'),
-('Tomatoes', 30, 2.79, '2025-02-28', 'Tomatoe'),
-('Tomatoes', 22, 2.59, '2025-02-20', 'Tomatoe'),
+('Tomatoes', 45, 2.99, '2025-04-15', 'Tomatoe'),
+('Tomatoes', 30, 2.79, '2025-04-28', 'Tomatoe'),
+('Tomatoes', 22, 2.59, '2025-04-20', 'Tomatoe'),
 
 -- Lettuce (2 entries)
-('Lettuce', 25, 1.99, '2025-02-25', 'Lettuce'),
-('Lettuce', 15, 1.89, '2025-02-18', 'Lettuce'),
+('Lettuce', 25, 1.99, '2025-04-25', 'Lettuce'),
+('Lettuce', 15, 1.89, '2025-04-18', 'Lettuce'),
 
 -- Milk (4 entries)
-('Milk', 20, 3.50, '2025-02-22', 'Milk'),
-('Milk', 15, 3.25, '2025-02-18', 'Milk'),
-('Milk', 35, 3.75, '2025-03-01', 'Milk'),
-('Milk', 10, 3.00, '2025-02-15', 'Milk'),
+('Milk', 20, 3.50, '2025-04-22', 'Milk'),
+('Milk', 15, 3.25, '2025-04-18', 'Milk'),
+('Milk', 35, 3.75, '2025-05-01', 'Milk'),
+('Milk', 10, 3.00, '2025-04-15', 'Milk'),
 
 -- Eggs (2 entries)
-('Eggs', 40, 3.00, '2025-03-01', 'Eggs'),
-('Eggs', 25, 2.75, '2025-02-25', 'Eggs'),
+('Eggs', 40, 3.00, '2025-05-01', 'Eggs'),
+('Eggs', 25, 2.75, '2025-04-25', 'Eggs'),
 
 -- Cheese (3 entries)
-('Cheese', 25, 4.50, '2025-03-10', 'Cheese'),
-('Cheese', 18, 4.25, '2025-02-28', 'Cheese'),
-('Cheese', 35, 4.75, '2025-03-15', 'Cheese'),
+('Cheese', 25, 4.50, '2025-04-10', 'Cheese'),
+('Cheese', 18, 4.25, '2025-04-28', 'Cheese'),
+('Cheese', 35, 4.75, '2025-04-15', 'Cheese'),
 
 -- Bread (2 entries)
-('Bread', 30, 2.50, '2025-02-25', 'Bread'),
-('Bread', 20, 2.25, '2025-02-20', 'Bread'),
+('Bread', 30, 2.50, '2025-04-25', 'Bread'),
+('Bread', 20, 2.25, '2025-04-20', 'Bread'),
 
 -- Chicken (1 entries)
-('Chicken', 40, 7.00, '2025-03-05', 'Chicken'),
+('Chicken', 40, 7.00, '2025-04-15', 'Chicken'),
 
 -- Beef (3 entries)
-('Beef', 35, 10.00, '2025-03-02', 'Beef'),
-('Beef', 20, 9.75, '2025-02-25', 'Beef'),
-('Beef', 45, 10.25, '2025-03-10', 'Beef'),
+('Beef', 35, 10.00, '2025-05-02', 'Beef'),
+('Beef', 20, 9.75, '2025-04-25', 'Beef'),
+('Beef', 45, 10.25, '2025-04-20', 'Beef'),
 
 -- Rice (2 entries)
-('Rice', 60, 2.00, '2025-03-15', 'Rice'),
-('Rice', 40, 1.90, '2025-02-28', 'Rice'),
+('Rice', 60, 2.00, '2025-05-15', 'Rice'),
+('Rice', 40, 1.90, '2025-04-28', 'Rice'),
 
 -- Pasta (3 entries)
-('Pasta', 45, 1.50, '2025-03-10', 'Pasta'),
-('Pasta', 30, 1.40, '2025-02-25', 'Pasta'),
-('Pasta', 55, 1.60, '2025-03-15', 'Pasta'),
+('Pasta', 45, 1.50, '2025-04-30', 'Pasta'),
+('Pasta', 30, 1.40, '2025-04-25', 'Pasta'),
+('Pasta', 55, 1.60, '2025-05-15', 'Pasta'),
 
 -- Onion (2 entries)
-('Onion', 35, 2.50, '2025-02-28', 'Onion'),
-('Onion', 25, 2.25, '2025-02-22', 'Onion'),
+('Onion', 35, 2.50, '2025-04-28', 'Onion'),
+('Onion', 25, 2.25, '2025-04-22', 'Onion'),
 
 -- Garlic (3 entries)
-('Garlic', 30, 3.00, '2025-03-05', 'Garlic'),
-('Garlic', 20, 2.75, '2025-02-25', 'Garlic'),
-('Garlic', 40, 3.25, '2025-03-10', 'Garlic'),
+('Garlic', 30, 3.00, '2025-04-15', 'Garlic'),
+('Garlic', 20, 2.75, '2025-04-25', 'Garlic'),
+('Garlic', 40, 3.25, '2025-05-10', 'Garlic'),
 
 -- Pepper (2 entries)
-('Pepper', 45, 4.50, '2025-03-15', 'Pepper'),
-('Pepper', 30, 4.25, '2025-03-01', 'Pepper'),
+('Pepper', 45, 4.50, '2025-05-15', 'Pepper'),
+('Pepper', 30, 4.25, '2025-04-21', 'Pepper'),
 
 -- Salt (1 entry)
 ('Salt', 50, 2.00, '2030-01-01', 'Salt'),
 
 -- Butter (3 entries)
-('Butter', 35, 4.50, '2025-03-10', 'Butter'),
-('Butter', 25, 4.25, '2025-02-28', 'Butter'),
-('Butter', 45, 4.75, '2025-03-15', 'Butter'),
+('Butter', 35, 4.50, '2025-04-10', 'Butter'),
+('Butter', 25, 4.25, '2025-04-28', 'Butter'),
+('Butter', 45, 4.75, '2025-05-15', 'Butter'),
 
 -- Olive Oil (2 entries)
-('Olive Oil', 40, 5.50, '2025-03-20', 'Olive_Oil'),
-('Olive Oil', 25, 5.25, '2025-03-05', 'Olive_Oil'),
+('Olive Oil', 40, 5.50, '2025-05-20', 'Olive_Oil'),
+('Olive Oil', 25, 5.25, '2025-04-25', 'Olive_Oil'),
 
 -- Carrot (3 entries)
-('Carrot', 35, 2.25, '2025-02-28', 'Carrot'),
-('Carrot', 25, 2.00, '2025-02-22', 'Carrot'),
-('Carrot', 45, 2.50, '2025-03-05', 'Carrot'),
+('Carrot', 35, 2.25, '2025-04-28', 'Carrot'),
+('Carrot', 25, 2.00, '2025-04-22', 'Carrot'),
+('Carrot', 45, 2.50, '2025-05-05', 'Carrot'),
 
 -- Spinach (2 entries)
-('Spinach', 30, 3.00, '2025-02-25', 'Spinach'),
-('Spinach', 20, 2.75, '2025-02-20', 'Spinach'),
+('Spinach', 30, 3.00, '2025-04-25', 'Spinach'),
+('Spinach', 20, 2.75, '2025-04-20', 'Spinach'),
 
 -- Cucumber (1 entries)
-('Cucumber', 35, 2.25, '2025-02-28', 'Cucumber'),
+('Cucumber', 35, 2.25, '2025-04-28', 'Cucumber'),
 
 -- Fish (3 entries)
-('Fish', 40, 8.50, '2025-03-05', 'Fish'),
-('Fish', 25, 8.25, '2025-02-28', 'Fish'),
-('Fish', 50, 8.75, '2025-03-10', 'Fish'),
+('Fish', 40, 8.50, '2025-04-15', 'Fish'),
+('Fish', 25, 8.25, '2025-04-28', 'Fish'),
+('Fish', 50, 8.75, '2025-05-10', 'Fish'),
 
 -- Pork (2 entries)
-('Pork', 35, 7.50, '2025-03-02', 'Pork'),
-('Pork', 25, 7.25, '2025-02-25', 'Pork'),
+('Pork', 35, 7.50, '2025-04-22', 'Pork'),
+('Pork', 25, 7.25, '2025-04-25', 'Pork'),
 
 -- Flour (3 entries)
-('Flour', 45, 2.50, '2025-03-15', 'Flour'),
-('Flour', 30, 2.25, '2025-03-01', 'Flour'),
-('Flour', 55, 2.75, '2025-03-20', 'Flour'),
+('Flour', 45, 2.50, '2025-04-15', 'Flour'),
+('Flour', 30, 2.25, '2025-05-01', 'Flour'),
+('Flour', 55, 2.75, '2025-05-20', 'Flour'),
 
 -- Sugar (2 entries)
-('Sugar', 40, 2.00, '2025-03-10', 'Sugar'),
-('Sugar', 30, 1.90, '2025-02-28', 'Sugar'),
+('Sugar', 40, 2.00, '2025-04-10', 'Sugar'),
+('Sugar', 30, 1.90, '2025-04-28', 'Sugar'),
 
 -- Cream (2 entries)
-('Cream', 35, 3.50, '2025-03-05', 'Cream'),
-('Cream', 25, 3.25, '2025-02-28', 'Cream');
+('Cream', 35, 3.50, '2025-04-15', 'Cream'),
+('Cream', 25, 3.25, '2025-04-28', 'Cream');
 
 -- Suppliers
 INSERT INTO SUPPLIERS (NAME, CONTACT_INFO, MINIMUM_ORDER, DELIVERY_TIME, DESCRIPTION) VALUES

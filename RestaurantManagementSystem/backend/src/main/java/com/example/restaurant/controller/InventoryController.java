@@ -4,6 +4,8 @@ import com.example.restaurant.model.Product;
 import com.example.restaurant.service.InventoryService;
 import com.example.restaurant.repository.ProductRepository;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import java.time.LocalDate;
 
 import java.util.List;
 
@@ -17,8 +19,14 @@ public class InventoryController {
 
     private final ProductRepository repository;
 
-    public InventoryController(ProductRepository repository) {
+    private final InventoryService inventoryService;
+
+    public InventoryController(ProductRepository repository, InventoryService inventoryService) {
+
         this.repository = repository;
+        this.inventoryService = inventoryService;
+
+
     }
 
     /**
@@ -74,4 +82,9 @@ public class InventoryController {
     @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable("id") Long productId) { repository.deleteById(productId);}
 
+    @DeleteMapping("/remove-expired-and-empty")
+    public ResponseEntity<String> removeExpiredAndEmptyProducts() {
+        int removedCount = inventoryService.removeExpiredAndEmptyProducts();
+        return ResponseEntity.ok("Successfully removed " + removedCount + " expired or empty products from inventory.");
+    }
 }
