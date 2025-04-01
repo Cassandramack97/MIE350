@@ -26,14 +26,14 @@ public class IngredientController {
     @GetMapping("/{id}")
     Ingredient retriveIngredient(@PathVariable("id") String id) {
         return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Supplier not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("Ingredient not found with id: " + id));
     }
 
     @PostMapping
     Ingredient createIngredient(@RequestBody Ingredient newIngredient) {return repository.save(newIngredient);}
 
     @PutMapping("{id}")
-    Ingredient updateSupplier(@RequestBody Ingredient newIngredient, @PathVariable("id") String ingredientId) {
+    Ingredient updateIngredient(@RequestBody Ingredient newIngredient, @PathVariable("id") String ingredientId) {
         return repository.findById(ingredientId)
                 .map(ingredient -> {
                     ingredient.setIngredientCode(newIngredient.getIngredientCode());
