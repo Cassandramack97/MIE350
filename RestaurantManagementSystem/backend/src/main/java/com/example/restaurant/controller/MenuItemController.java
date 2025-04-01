@@ -85,7 +85,7 @@ public class MenuItemController {
         MenuItem menuItem = new MenuItem();
         menuItem.setName(menuItemDto.getName());
         menuItem.setDescription(menuItemDto.getDescription());
-        //menuItem.setPrice(menuItemDto.getPrice());
+        menuItem.setPrice(menuItemDto.getPrice());
         menuItemRepository.save(menuItem); // saving first to get menuItemId
 
         // Step 2: Associate Ingredients with the MenuItem
