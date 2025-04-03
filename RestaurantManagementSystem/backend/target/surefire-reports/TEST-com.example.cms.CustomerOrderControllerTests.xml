@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.cms.IngredientControllerTests" time="0.052" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.cms.CustomerOrderControllerTests" time="0.087" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -58,9 +58,9 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testGetAllIngredients" classname="com.example.cms.IngredientControllerTests" time="0"/>
-  <testcase name="testCreateIngredient" classname="com.example.cms.IngredientControllerTests" time="0.011"/>
-  <testcase name="testDeleteIngredient" classname="com.example.cms.IngredientControllerTests" time="0.016"/>
-  <testcase name="testUpdateIngredient" classname="com.example.cms.IngredientControllerTests" time="0.013"/>
-  <testcase name="testGetIngredientByCode" classname="com.example.cms.IngredientControllerTests" time="0.008"/>
+  <testcase name="testGetCustomerOrderById" classname="com.example.cms.CustomerOrderControllerTests" time="0.022"/>
+  <testcase name="testGetAllCustomerOrders" classname="com.example.cms.CustomerOrderControllerTests" time="0.015"/>
+  <testcase name="testDeleteCustomerOrder" classname="com.example.cms.CustomerOrderControllerTests" time="0.012"/>
+  <testcase name="testUpdateCustomerOrder" classname="com.example.cms.CustomerOrderControllerTests" time="0.016"/>
+  <testcase name="testCreateCustomerOrder" classname="com.example.cms.CustomerOrderControllerTests" time="0.013"/>
 </testsuite>
