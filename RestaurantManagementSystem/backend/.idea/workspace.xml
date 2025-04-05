@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e6bbf1ba-cdd0-4c9d-8a69-997b158fe010" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-management.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/RestaurantManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/RestaurantManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/AnalyticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/AnalyticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/CustomerOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/CustomerOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/IngredientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/IngredientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/MenuItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/MenuItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/MenuItemIngredientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/MenuItemIngredientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/SupplierOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/controller/SupplierOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/IngredientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/IngredientDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/MenuItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/MenuItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/MenuItemIngredientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/dto/MenuItemIngredientDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/CustomerOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItemIngredientKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/MenuItemIngredientKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/SupplierOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/model/SupplierOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/CustomerOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/CustomerOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/IngredientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/MenuItemIngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/MenuItemIngredientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/MenuItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/MenuItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/SupplierOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/SupplierOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/SupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/repository/SupplierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/AnalyticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/AnalyticsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/DashboardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/MenuItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/MenuItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/SupplierOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/SupplierOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restaurant/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/restaurant/controller/InventoryControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/restaurant/controller/SupplierControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/AnalyticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/AnalyticsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/CustomerOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/CustomerOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/DashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/IngredientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/IngredientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/InventoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/InventoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/MenuItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/MenuItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/SupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/SupplierController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/SupplierOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/controller/SupplierOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/restaurant/service/InventoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/restaurant/service/InventoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2vKF1zIISWwzNC5wrMSf4GJqNmk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/krasi/OneDrive/Documents/GitHub/MIE350CAS/MIE350/RestaurantManagementSystem/backend&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6bbf1ba-cdd0-4c9d-8a69-997b158fe010" name="Changes" comment="" />
+      <created>1743885648525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743885648525</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
