@@ -7,6 +7,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "menu_item_ingredients")
@@ -78,5 +79,10 @@ public class MenuItemIngredient {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    @JsonProperty("ingredientName")
+    public String getIngredientName() {
+        return ingredient != null ? ingredient.getName() : null;
     }
 }

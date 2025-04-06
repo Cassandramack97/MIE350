@@ -4,41 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c0119f7-a281-4666-ba11-fc231e76205f" name="Changes" comment="added ingredientCode to product json">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/IngredientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/IngredientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/MenuItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/MenuItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/controller/SupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/dto/IngredientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/dto/IngredientDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/dto/MenuItemIngredientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/dto/MenuItemIngredientDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/Ingredient.java" afterDir="false" />
+    <list default="true" id="7c0119f7-a281-4666-ba11-fc231e76205f" name="Changes" comment="changed IngredientCode from String to Long">
       <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredientKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredientKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/repository/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/InventoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/InventoryControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/MenuItemControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/MenuItemControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/SupplierControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/SupplierControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/IngredientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/IngredientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/MenuItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/MenuItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/SupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/controller/SupplierController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/dto/IngredientDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/dto/IngredientDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/dto/MenuItemIngredientDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/dto/MenuItemIngredientDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/Ingredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/Ingredient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/MenuItemIngredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/MenuItemIngredient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/repository/IngredientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/com/example/restaurant/repository/IngredientRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/IngredientControllerTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/InventoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/InventoryControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/MenuItemControllerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/MenuItemControllerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/SupplierControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/SupplierControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743914460048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed IngredientCode from String to Long">
+      <option name="closed" value="true" />
+      <created>1743923279445</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743923279445</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added ingredientCode to product json" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ingredientCode to product json" />
+    <MESSAGE value="changed IngredientCode from String to Long" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed IngredientCode from String to Long" />
   </component>
 </project>
