@@ -44,6 +44,10 @@ public class Ingredient {
     @ManyToMany(mappedBy = "ingredientList")
     private List<Supplier> suppliers = new ArrayList<>();
 
+    // Refers to the ingredients in a specific SupplierOrder
+    @OneToMany(mappedBy = "ingredient") // Refers to the 'ingredient' field in SupplierOrders
+    private List<SupplierOrder> orders = new ArrayList<>();
+
     // --- Constructors ---
     public Ingredient() {
         // Default constructor for JPA

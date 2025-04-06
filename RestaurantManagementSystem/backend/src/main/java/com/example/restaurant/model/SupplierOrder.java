@@ -34,8 +34,8 @@ public class SupplierOrder {
 
     //Ingredient in the order
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    @JoinColumn(name = "ingredient_code", nullable = false)
+    private Ingredient ingredient;
 
     //Order placed date
     @Column(name = "DATE_PLACED")
@@ -45,15 +45,27 @@ public class SupplierOrder {
     @Column(name = "DATE_DELIVERED")
     private LocalDate dateDelivered;
 
+    @Column(name = "PRODUCT_NAME")
+    private String productName;
+
+    @Column(name = "price")
+    private Double price;
+
+    @Column(name = "product_expiry_date")
+    private LocalDate expiryDate;
+
     public SupplierOrder() {}
 
-    public SupplierOrder(Long id, Supplier supplier, Integer quantity, String status, Product product, LocalDate datePlaced, LocalDate dateDelivered) {
+    public SupplierOrder(Long id, Supplier supplier, Integer quantity, String status, Ingredient ingredient, LocalDate datePlaced, LocalDate dateDelivered, String productName, Double price, LocalDate expiryDate) {
         this.id = id;
         this.supplier = supplier;
         this.quantity = quantity;
         this.status = status;
-        this.product = product;
+        this.ingredient = ingredient;
         this.datePlaced = datePlaced;
+        this.productName = productName;
+        this.price = price;
+        this.expiryDate = expiryDate;
         if (supplier != null && datePlaced != null) {
             this.dateDelivered = datePlaced.plusDays(supplier.getDeliveryTime());
         }
@@ -75,9 +87,7 @@ public class SupplierOrder {
         return status;
     }
 
-    public Product getProduct() {
-        return product;
-    }
+    public Ingredient getIngredient() { return ingredient; }
 
     public LocalDate getDatePlaced() {
         return datePlaced;
@@ -86,6 +96,12 @@ public class SupplierOrder {
     public LocalDate getDateDelivered() {
         return dateDelivered;
     }
+
+    public Double getPrice() {return price;}
+
+    public LocalDate getExpiryDate() {return expiryDate; }
+
+    public String getProductName() {return productName; }
 
     // Setters
     public void setId(Long id) {
@@ -96,17 +112,13 @@ public class SupplierOrder {
         this.supplier = supplier;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+    public void setIngredient(Ingredient ingredient) {this.ingredient = ingredient; }
 
     public void setDatePlaced(LocalDate datePlaced) {
         this.datePlaced = datePlaced;
@@ -115,5 +127,11 @@ public class SupplierOrder {
     public void setDateDelivered(LocalDate dateDelivered) {
         this.dateDelivered = dateDelivered;
     }
+
+    public void setPrice(Double price) {this.price = price; }
+
+    public void setExpiryDate(LocalDate expiryDate) {this.expiryDate = expiryDate; }
+
+    public void setProductName(String productName) {this.productName = productName; }
 }
 

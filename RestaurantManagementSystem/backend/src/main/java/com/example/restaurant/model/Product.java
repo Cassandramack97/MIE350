@@ -40,10 +40,6 @@ public class Product {
     @JsonBackReference("ingredient-products")
     private Ingredient ingredient;
 
-    // Refers to the products in a specific SupplierOrder
-    @OneToMany(mappedBy = "product") // Refers to the 'product' field in SupplierOrders
-    private List<SupplierOrder> orders = new ArrayList<>();
-
     /**
      * When the product will expire (if applicable).
      * Null if not perishable.
