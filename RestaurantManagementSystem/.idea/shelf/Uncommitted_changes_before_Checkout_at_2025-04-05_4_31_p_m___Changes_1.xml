@@ -1,0 +1,204 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1" date="1743885097847" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2025-04-05 4:31 p.m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/SupplierOrderRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/SupplierOrderRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierOrderRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/SupplierController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/SupplierController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/IngredientController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/IngredientController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/IngredientController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/dto/IngredientDto.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/dto/IngredientDto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/IngredientDto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/AnalyticsController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/AnalyticsController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/AnalyticsController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/CustomerOrderController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/CustomerOrderController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/CustomerOrderController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/AnalyticsController$ForecastResult.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/AnalyticsController$ForecastResult.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/AnalyticsController$ForecastResult.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/AnalyticsService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/AnalyticsService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/AnalyticsService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/MenuItemService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/MenuItemService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/MenuItemRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/MenuItemRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/com/example/restaurant/controller/SupplierControllerTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/com/example/restaurant/controller/SupplierControllerTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierControllerTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/IngredientRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/IngredientRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/IngredientRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="../.vscode.zip" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/.vscode.zip" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItem.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/config/WebConfig.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/config/WebConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/WebConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/InventoryService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/InventoryService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/InventoryService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/SupplierRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/SupplierRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/DashboardService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/DashboardService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/DashboardService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItemIngredient.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItemIngredient.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemIngredient.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/SupplierService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/SupplierService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/SupplierOrderController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/SupplierOrderController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierOrderController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/dto/MenuItemIngredientDto.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/dto/MenuItemIngredientDto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemIngredientDto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/RestaurantManagementApplication.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/RestaurantManagementApplication.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/RestaurantManagementApplication.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/ProductRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/ProductRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/ProductRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/Supplier.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/Supplier.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/Supplier.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/MenuItemIngredientKey.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemIngredientKey.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/Ingredient.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/Ingredient.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/Ingredient.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/CustomerOrder.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/CustomerOrder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/CustomerOrder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/MenuItemIngredientRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/MenuItemIngredientRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemIngredientRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/Product.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/Product.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/Product.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/dto/MenuItemDto.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/dto/MenuItemDto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemDto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/model/SupplierOrder.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/model/SupplierOrder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierOrder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/exception/ResourceNotFoundException.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/exception/ResourceNotFoundException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/ResourceNotFoundException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/service/SupplierOrderService.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/service/SupplierOrderService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/SupplierOrderService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/MenuItemController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/MenuItemController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/DashboardController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/DashboardController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/DashboardController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/repository/CustomerOrderRepository.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/repository/CustomerOrderRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/CustomerOrderRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/test-classes/com/example/restaurant/controller/InventoryControllerTest.class" />
+    <option name="AFTER_PATH" value="backend/target/test-classes/com/example/restaurant/controller/InventoryControllerTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/InventoryControllerTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/InventoryController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/InventoryController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/InventoryController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/target/classes/com/example/restaurant/controller/MenuItemIngredientController.class" />
+    <option name="AFTER_PATH" value="backend/target/classes/com/example/restaurant/controller/MenuItemIngredientController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-04-05_4_31_p_m__[Changes]1/MenuItemIngredientController.class" />
+  </binary>
+</changelist>

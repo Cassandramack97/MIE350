@@ -1,0 +1,6 @@
+*.DS_Store
+*.jar
+appsmith-stacks/
+appsmith-data/
+*.log
+*.tmp
