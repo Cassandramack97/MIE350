@@ -18,11 +18,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 @SpringBootTest(classes = com.example.restaurant.RestaurantManagementApplication.class)
 @AutoConfigureMockMvc
 public class MenuItemControllerTests extends BaseControllerTest {
-
 
     @Autowired
     private MockMvc mockMvc;
@@ -67,10 +65,12 @@ public class MenuItemControllerTests extends BaseControllerTest {
 
     @Test
     void testCreateMenuItem() throws Exception {
-        Ingredient ing = new Ingredient("ING001", "Potato");
+        // Create a test Ingredient with a Long id instead of a String code.
+        Ingredient ing = new Ingredient(1L, "Potato");
         ingredientRepository.save(ing);
 
-        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto("ING001", 2.0, "pcs");
+        // Create a MenuItemIngredientDto with a numeric ingredientCode.
+        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto(1L, 2.0, "pcs");
 
         MenuItemDto dto = new MenuItemDto();
         dto.setName("Fries");
@@ -81,8 +81,8 @@ public class MenuItemControllerTests extends BaseControllerTest {
         String json = objectMapper.writeValueAsString(dto);
 
         mockMvc.perform(post("/api/menu-items")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Fries"));
 
@@ -91,13 +91,15 @@ public class MenuItemControllerTests extends BaseControllerTest {
 
     @Test
     void testUpdateMenuItem() throws Exception {
-        Ingredient ing = new Ingredient("ING002", "Cheese");
+        // Create a test Ingredient with a Long id.
+        Ingredient ing = new Ingredient(2L, "Cheese");
         ingredientRepository.save(ing);
 
         MenuItem menuItem = new MenuItem("Pizza", "Cheesy goodness", 12.99);
         menuItem = menuItemRepository.save(menuItem);
 
-        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto("ING002", 1.5, "cups");
+        // Update the MenuItem with an ingredient using a numeric code.
+        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto(2L, 1.5, "cups");
 
         MenuItemDto dto = new MenuItemDto();
         dto.setName("Cheese Pizza");
@@ -108,8 +110,8 @@ public class MenuItemControllerTests extends BaseControllerTest {
         String json = objectMapper.writeValueAsString(dto);
 
         mockMvc.perform(put("/api/menu-items/" + menuItem.getId())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Cheese Pizza"))
                 .andExpect(jsonPath("$.price").value(14.5));

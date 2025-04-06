@@ -2,12 +2,12 @@ package com.example.restaurant.dto;
 
 public class MenuItemIngredientDto {
     private Long menuItemId;
-    private String ingredientCode;
+    private Long ingredientCode;
     private double quantity;
     private String unit;
 
     // Constructor
-    public MenuItemIngredientDto(String ingredientCode, double quantity, String unit) {
+    public MenuItemIngredientDto(Long ingredientCode, double quantity, String unit) {
         this.ingredientCode = ingredientCode;
         this.quantity = quantity;
         this.unit = unit;
@@ -18,7 +18,7 @@ public class MenuItemIngredientDto {
         return menuItemId;
     }
 
-    public String getIngredientCode() {
+    public Long getIngredientCode() {
         return ingredientCode;
     }
 
@@ -35,7 +35,7 @@ public class MenuItemIngredientDto {
         this.menuItemId = menuItemId;
     }
 
-    public void setIngredientCode(String ingredientCode) {
+    public void setIngredientCode(Long ingredientCode) {
         this.ingredientCode = ingredientCode;
     }
 

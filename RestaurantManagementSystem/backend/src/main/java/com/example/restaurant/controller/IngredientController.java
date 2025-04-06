@@ -4,8 +4,6 @@ import com.example.restaurant.model.Ingredient;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.example.restaurant.repository.IngredientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 /**
  * A REST controller for managing inventory (Product entities).
@@ -17,23 +15,28 @@ public class IngredientController {
 
     private final IngredientRepository repository;
 
-    public IngredientController(IngredientRepository repository) {this.repository = repository;}
+    public IngredientController(IngredientRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping
-    List<Ingredient> getAllIngredients() {
-        return repository.findAll();    }
+    public List<Ingredient> getAllIngredients() {
+        return repository.findAll();
+    }
 
     @GetMapping("/{id}")
-    Ingredient retriveIngredient(@PathVariable("id") String id) {
+    public Ingredient retriveIngredient(@PathVariable("id") Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ingredient not found with id: " + id));
     }
 
     @PostMapping
-    Ingredient createIngredient(@RequestBody Ingredient newIngredient) {return repository.save(newIngredient);}
+    public Ingredient createIngredient(@RequestBody Ingredient newIngredient) {
+        return repository.save(newIngredient);
+    }
 
     @PutMapping("{id}")
-    Ingredient updateIngredient(@RequestBody Ingredient newIngredient, @PathVariable("id") String ingredientId) {
+    public Ingredient updateIngredient(@RequestBody Ingredient newIngredient, @PathVariable("id") Long ingredientId) {
         return repository.findById(ingredientId)
                 .map(ingredient -> {
                     ingredient.setIngredientCode(newIngredient.getIngredientCode());
@@ -47,6 +50,7 @@ public class IngredientController {
     }
 
     @DeleteMapping("{id}")
-    void deleIngredient(@PathVariable("id") String ingredientId) { repository.deleteById(ingredientId);}
-
+    public void deleIngredient(@PathVariable("id") Long ingredientId) {
+        repository.deleteById(ingredientId);
+    }
 }

@@ -1,50 +1,44 @@
 package com.example.restaurant.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 public class MenuItemIngredientKey implements Serializable {
 
     @Column(name = "menu_item_id")
-    Long itemId;
+    private Long itemId;
 
     @Column(name = "ingredient_code")
-    String ingredientCode;
+    private Long ingredientCode;
+
+    public MenuItemIngredientKey() {}
+
+    public MenuItemIngredientKey(Long itemId, Long ingredientCode) {
+        this.itemId = itemId;
+        this.ingredientCode = ingredientCode;
+    }
 
     @Override
     public int hashCode() {
-        String concatString = String.valueOf(itemId.hashCode()) + String.valueOf(ingredientCode.hashCode());
-        return concatString.hashCode();
-    }
-
-    public MenuItemIngredientKey(){}
-
-    public MenuItemIngredientKey(Long itemId, String ingredientCode) {
-        this.setItemId(itemId);
-        this.setIngredientCode(ingredientCode);
+        return Objects.hash(itemId, ingredientCode);
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == null) {
-            return false;
-        }
-        if (o == this) {
-            return true;
-        }
-        if (!(o instanceof MenuItemIngredientKey)) {
-            return false;
-        }
-        MenuItemIngredientKey other = (MenuItemIngredientKey) o;
-        return itemId.equals(other.itemId) && ingredientCode.equals(other.ingredientCode);
+        if (this == o) return true;
+        if (!(o instanceof MenuItemIngredientKey)) return false;
+        MenuItemIngredientKey that = (MenuItemIngredientKey) o;
+        return Objects.equals(itemId, that.itemId) &&
+                Objects.equals(ingredientCode, that.ingredientCode);
     }
 
     // --- Getters & Setters ---
 
-    public String getIngredientCode() { return ingredientCode;
+    public Long getIngredientCode() {
+        return ingredientCode;
     }
 
     public Long getItemId() {
@@ -52,10 +46,10 @@ public class MenuItemIngredientKey implements Serializable {
     }
 
     public void setItemId(Long itemId) {
-        this.itemId = itemId; }
-
-    public void setIngredientCode(String ingredientCode) {
-        this.ingredientCode = ingredientCode;
+        this.itemId = itemId;
     }
 
+    public void setIngredientCode(Long ingredientCode) {
+        this.ingredientCode = ingredientCode;
+    }
 }

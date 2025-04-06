@@ -6,7 +6,6 @@ import com.example.restaurant.repository.IngredientRepository;
 import com.example.restaurant.repository.MenuItemIngredientRepository;
 import com.example.restaurant.dto.*;
 import com.example.restaurant.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,13 +16,13 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class MenuItemController {
 
-    private MenuItemRepository menuItemRepository;
+    private final MenuItemRepository menuItemRepository;
+    private final IngredientRepository ingredientRepository;
+    private final MenuItemIngredientRepository menuItemIngredientRepository;
 
-    private IngredientRepository ingredientRepository;
-
-    private MenuItemIngredientRepository menuItemIngredientRepository;
-
-    public MenuItemController(MenuItemRepository menuItemRepository, IngredientRepository ingredientRepository, MenuItemIngredientRepository menuItemIngredientRepository ) {
+    public MenuItemController(MenuItemRepository menuItemRepository,
+                              IngredientRepository ingredientRepository,
+                              MenuItemIngredientRepository menuItemIngredientRepository) {
         this.menuItemRepository = menuItemRepository;
         this.ingredientRepository = ingredientRepository;
         this.menuItemIngredientRepository = menuItemIngredientRepository;
@@ -45,7 +44,7 @@ public class MenuItemController {
         MenuItem menuItem = menuItemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Menu item not found with id: " + id));
 
-        // Update fields
+        // Update basic fields
         menuItem.setName(menuItemDto.getName());
         menuItem.setDescription(menuItemDto.getDescription());
         menuItem.setPrice(menuItemDto.getPrice());
@@ -77,16 +76,15 @@ public class MenuItemController {
         return menuItemRepository.save(menuItem);
     }
 
-
     @PostMapping
     public MenuItem createMenuItem(@RequestBody MenuItemDto menuItemDto) {
 
-        // Step 1: Create and save the new MenuItem
+        // Step 1: Create and save the new MenuItem to get its ID
         MenuItem menuItem = new MenuItem();
         menuItem.setName(menuItemDto.getName());
         menuItem.setDescription(menuItemDto.getDescription());
         menuItem.setPrice(menuItemDto.getPrice());
-        menuItemRepository.save(menuItem); // saving first to get menuItemId
+        menuItemRepository.save(menuItem);
 
         // Step 2: Associate Ingredients with the MenuItem
         List<MenuItemIngredient> ingredientAssociations = new ArrayList<>();
@@ -109,7 +107,7 @@ public class MenuItemController {
 
         menuItemIngredientRepository.saveAll(ingredientAssociations);
 
-        // update associations in MenuItem entity (optional but recommended)
+        // Update associations in the MenuItem entity
         menuItem.setIngredients(ingredientAssociations);
 
         return menuItem;
@@ -126,5 +124,4 @@ public class MenuItemController {
         // Then delete the menu item
         menuItemRepository.delete(menuItem);
     }
-
 }

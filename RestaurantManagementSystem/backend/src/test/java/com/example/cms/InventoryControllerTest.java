@@ -26,11 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Tests for the InventoryController endpoints,
  * with no LocalDate usage in testCreateProduct / testUpdateProduct.
  */
-
 @SpringBootTest(classes = com.example.restaurant.RestaurantManagementApplication.class)
 @AutoConfigureMockMvc
 class InventoryControllerTest extends BaseControllerTest {
-
 
     @Autowired
     private MockMvc mockMvc;
@@ -55,7 +53,7 @@ class InventoryControllerTest extends BaseControllerTest {
     /**
      * Helper method to create & save a test Ingredient.
      */
-    private Ingredient createTestIngredient(String code) {
+    private Ingredient createTestIngredient(Long code) {
         Ingredient ing = new Ingredient();
         ing.setIngredientCode(code);
         ing.setName("Test Ingredient " + code);
@@ -67,7 +65,7 @@ class InventoryControllerTest extends BaseControllerTest {
     // -----------------------------------------
     @Test
     void testGetAllProducts() throws Exception {
-        Ingredient ing = createTestIngredient("ING_A");
+        Ingredient ing = createTestIngredient(101L);
 
         Product product = new Product();
         product.setName("Test Product");
@@ -88,7 +86,7 @@ class InventoryControllerTest extends BaseControllerTest {
     // -----------------------------------------
     @Test
     void testGetProductById() throws Exception {
-        Ingredient ing = createTestIngredient("ING_B");
+        Ingredient ing = createTestIngredient(102L);
 
         Product product = new Product();
         product.setName("Unique Product");
@@ -109,77 +107,78 @@ class InventoryControllerTest extends BaseControllerTest {
     // -- (No LocalDate usage, so no Jackson date needed)
     // -----------------------------------------
     @Test
-void testCreateProduct() throws Exception {
-    Ingredient ing = createTestIngredient("ING_C");
+    void testCreateProduct() throws Exception {
+        Ingredient ing = createTestIngredient(103L);
 
-    // Manually build a simple JSON payload
-    String json = """
-        {
-            "name": "New Product",
-            "quantity": 2,
-            "price": 4.99,
-            "ingredient": {
-                "ingredientCode": "%s"
+        // Manually build a simple JSON payload with a numeric ingredientCode
+        String json = """
+            {
+                "name": "New Product",
+                "quantity": 2,
+                "price": 4.99,
+                "ingredient": {
+                    "ingredientCode": %d
+                }
             }
-        }
-        """.formatted(ing.getIngredientCode());
+            """.formatted(ing.getIngredientCode());
 
-    mockMvc.perform(post("/api/inventory")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(json))
-            .andExpect(status().isOk());
+        mockMvc.perform(post("/api/inventory")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
+                .andExpect(status().isOk());
 
-    Assertions.assertEquals(1, productRepository.count());
-    Product saved = productRepository.findAll().get(0);
-    Assertions.assertEquals("New Product", saved.getName());
-}
+        Assertions.assertEquals(1, productRepository.count());
+        Product saved = productRepository.findAll().get(0);
+        Assertions.assertEquals("New Product", saved.getName());
+    }
+
     // -----------------------------------------
     // 4) PUT /api/inventory/{id}
     // -- (No LocalDate usage in the request body)
     // -----------------------------------------
     @Test
-void testUpdateProduct() throws Exception {
-    Ingredient ingOld = createTestIngredient("ING_OLD");
-    Product existing = new Product();
-    existing.setName("OldName");
-    existing.setQuantity(1);
-    existing.setPrice(1.99);
-    existing.setIngredient(ingOld);
-    existing = productRepository.save(existing);
+    void testUpdateProduct() throws Exception {
+        Ingredient ingOld = createTestIngredient(104L);
+        Product existing = new Product();
+        existing.setName("OldName");
+        existing.setQuantity(1);
+        existing.setPrice(1.99);
+        existing.setIngredient(ingOld);
+        existing = productRepository.save(existing);
 
-    Ingredient ingNew = createTestIngredient("ING_NEW");
+        Ingredient ingNew = createTestIngredient(105L);
 
-    // JSON with only ingredientCode
-    String updatedJson = """
-        {
-            "name": "UpdatedName",
-            "quantity": 99,
-            "price": 9.99,
-            "ingredient": {
-                "ingredientCode": "%s"
+        // JSON with numeric ingredientCode
+        String updatedJson = """
+            {
+                "name": "UpdatedName",
+                "quantity": 99,
+                "price": 9.99,
+                "ingredient": {
+                    "ingredientCode": %d
+                }
             }
-        }
-        """.formatted(ingNew.getIngredientCode());
+            """.formatted(ingNew.getIngredientCode());
 
-    mockMvc.perform(put("/api/inventory/" + existing.getId())
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(updatedJson))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.name").value("UpdatedName"))
-            .andExpect(jsonPath("$.quantity").value(99))
-            .andExpect(jsonPath("$.price").value(9.99));
+        mockMvc.perform(put("/api/inventory/" + existing.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(updatedJson))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("UpdatedName"))
+                .andExpect(jsonPath("$.quantity").value(99))
+                .andExpect(jsonPath("$.price").value(9.99));
 
-    Product changed = productRepository.findById(existing.getId()).orElseThrow();
-    Assertions.assertEquals("UpdatedName", changed.getName());
-    Assertions.assertEquals("ING_NEW", changed.getIngredient().getIngredientCode());
-}
+        Product changed = productRepository.findById(existing.getId()).orElseThrow();
+        Assertions.assertEquals("UpdatedName", changed.getName());
+        Assertions.assertEquals(105L, changed.getIngredient().getIngredientCode());
+    }
 
     // -----------------------------------------
     // 5) DELETE /api/inventory/{id}
     // -----------------------------------------
     @Test
     void testDeleteProduct() throws Exception {
-        Ingredient ing = createTestIngredient("ING_D");
+        Ingredient ing = createTestIngredient(106L);
 
         Product p = new Product();
         p.setName("DeleteMe");
@@ -201,7 +200,7 @@ void testUpdateProduct() throws Exception {
     // -----------------------------------------
     @Test
     void testRemoveExpiredAndEmptyProducts() throws Exception {
-        Ingredient ing = createTestIngredient("ING_E");
+        Ingredient ing = createTestIngredient(107L);
 
         // Expired
         Product expired = new Product();

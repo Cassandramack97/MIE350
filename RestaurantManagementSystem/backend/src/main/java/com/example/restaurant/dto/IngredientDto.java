@@ -1,19 +1,19 @@
 package com.example.restaurant.dto;
 
 public class IngredientDto {
-    private String ingredientCode;
+    private Long ingredientCode;
     private String name;
     private String measuredBy;
 
     // Constructor
-    public IngredientDto(String ingredientCode, String name, String measuredBy) {
+    public IngredientDto(Long ingredientCode, String name, String measuredBy) {
         this.ingredientCode = ingredientCode;
         this.name = name;
         this.measuredBy = measuredBy;
     }
 
     // Getters
-    public String getIngredientCode() {
+    public Long getIngredientCode() {
         return ingredientCode;
     }
 
@@ -26,7 +26,7 @@ public class IngredientDto {
     }
 
     // Setters
-    public void setIngredientCode(String ingredientCode) {
+    public void setIngredientCode(Long ingredientCode) {
         this.ingredientCode = ingredientCode;
     }
 

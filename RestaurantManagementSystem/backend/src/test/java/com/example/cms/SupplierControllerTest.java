@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional; // <-- Import this
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -25,16 +24,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-/**
- * Tests for the SupplierController endpoints.
- */
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = com.example.restaurant.RestaurantManagementApplication.class)
 @AutoConfigureMockMvc
 @Transactional   // keeps lazy‑loaded collections accessible
-class SupplierControllerTest extends BaseControllerTest {
-
+public class SupplierControllerTest extends BaseControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -57,7 +52,7 @@ class SupplierControllerTest extends BaseControllerTest {
     /**
      * Helper method to create & save an Ingredient in the DB.
      */
-    private Ingredient createTestIngredient(String code) {
+    private Ingredient createTestIngredient(Long code) {
         Ingredient ing = new Ingredient();
         ing.setIngredientCode(code);
         ing.setName("Ingredient " + code);
@@ -120,8 +115,8 @@ class SupplierControllerTest extends BaseControllerTest {
     @Test
     void testCreateSupplier() throws Exception {
         // 1) We must have actual Ingredient(s) in DB for the codes we reference
-        Ingredient ing1 = createTestIngredient("ING1");
-        Ingredient ing2 = createTestIngredient("ING2");
+        Ingredient ing1 = createTestIngredient(1L);
+        Ingredient ing2 = createTestIngredient(2L);
 
         // 2) Build a Supplier with "fake" ingredient references
         Supplier s = new Supplier();
@@ -133,10 +128,10 @@ class SupplierControllerTest extends BaseControllerTest {
 
         // We'll just set the code in each ingredient for the JSON body
         Ingredient ref1 = new Ingredient();
-        ref1.setIngredientCode("ING1");
+        ref1.setIngredientCode(1L);
 
         Ingredient ref2 = new Ingredient();
-        ref2.setIngredientCode("ING2");
+        ref2.setIngredientCode(2L);
 
         List<Ingredient> ingList = new ArrayList<>();
         ingList.add(ref1);
@@ -147,8 +142,8 @@ class SupplierControllerTest extends BaseControllerTest {
         String json = objectMapper.writeValueAsString(s);
 
         mockMvc.perform(post("/api/suppliers")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk());
 
         // 4) Verify
@@ -175,8 +170,8 @@ class SupplierControllerTest extends BaseControllerTest {
         original = supplierRepository.save(original);
 
         // Insert some ingredients for the update
-        Ingredient ing1 = createTestIngredient("ING_ONE");
-        Ingredient ing2 = createTestIngredient("ING_TWO");
+        Ingredient ing1 = createTestIngredient(3L);
+        Ingredient ing2 = createTestIngredient(4L);
 
         // Build the updated Supplier object
         Supplier updateBody = new Supplier();
@@ -188,9 +183,9 @@ class SupplierControllerTest extends BaseControllerTest {
 
         // We only need the ingredient codes in the JSON
         Ingredient ref1 = new Ingredient();
-        ref1.setIngredientCode("ING_ONE");
+        ref1.setIngredientCode(3L);
         Ingredient ref2 = new Ingredient();
-        ref2.setIngredientCode("ING_TWO");
+        ref2.setIngredientCode(4L);
 
         List<Ingredient> updatedIngList = new ArrayList<>();
         updatedIngList.add(ref1);
@@ -201,8 +196,8 @@ class SupplierControllerTest extends BaseControllerTest {
 
         // Perform PUT
         mockMvc.perform(put("/api/suppliers/" + original.getId())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("New Name"))
                 .andExpect(jsonPath("$.deliveryTime").value(5));

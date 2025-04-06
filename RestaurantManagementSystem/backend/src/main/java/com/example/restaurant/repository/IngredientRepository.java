@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Provides CRUD operations for Ingredient entities.
  */
 @Repository
-public interface IngredientRepository extends JpaRepository<Ingredient, String> {
+public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
     // Custom queries if needed
 }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Represents an ingredient item. Parent to product.
@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Ingredient {
 
     @Id
-    private String ingredientCode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long ingredientCode;
 
     /**
      * The name of the ingredient (e.g. "Tomatoes", "Cheese").
@@ -34,12 +35,12 @@ public class Ingredient {
     @JsonManagedReference("ingredient-menuItemIngredient")
     private List<MenuItemIngredient> menuItems = new ArrayList<>();
 
-    //Refers to the different product entities that are of this ingredient type
+    // Refers to the different product entities that are of this ingredient type
     @OneToMany(mappedBy="ingredient")
     @JsonManagedReference("ingredient-products")
     private List<Product> products = new ArrayList<>();
 
-    //Refers to the relationship with suppliers, i.e what ingredients are supplied by which suppliers
+    // Refers to the relationship with suppliers, i.e., what ingredients are supplied by which suppliers
     @ManyToMany(mappedBy = "ingredientList")
     private List<Supplier> suppliers = new ArrayList<>();
 
@@ -48,18 +49,18 @@ public class Ingredient {
         // Default constructor for JPA
     }
 
-    public Ingredient(String ingredientCode, String name) {
+    public Ingredient(Long ingredientCode, String name) {
         this.ingredientCode = ingredientCode;
         this.name = name;
     }
 
     // --- Getters & Setters ---
 
-    public String getIngredientCode() {
+    public Long getIngredientCode() {
         return ingredientCode;
     }
 
-    public void setIngredientCode(String code) {
+    public void setIngredientCode(Long code) {
         this.ingredientCode = code;
     }
 
@@ -79,7 +80,20 @@ public class Ingredient {
         this.menuItems = menuItems;
     }
 
-    public List<Product> getProducts(){ return products; }
+    public List<Product> getProducts() {
+        return products;
+    }
 
-    public void setProducts(List<Product> products) {this.products = products;  }
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    @JsonIgnore
+    public List<Supplier> getSuppliers() {
+        return suppliers;
+    }
+
+    public void setSuppliers(List<Supplier> suppliers) {
+        this.suppliers = suppliers;
+    }
 }
