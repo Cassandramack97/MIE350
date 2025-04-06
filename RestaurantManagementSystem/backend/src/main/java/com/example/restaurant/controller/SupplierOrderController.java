@@ -4,6 +4,7 @@ import com.example.restaurant.dto.SupplierOrderDto;
 import com.example.restaurant.model.Ingredient;
 import com.example.restaurant.model.Supplier;
 import com.example.restaurant.model.SupplierOrder;
+import com.example.restaurant.model.Product;
 import com.example.restaurant.repository.IngredientRepository;
 import com.example.restaurant.repository.SupplierOrderRepository;
 import com.example.restaurant.repository.SupplierRepository;
@@ -68,8 +69,25 @@ public class SupplierOrderController {
         order.setPrice(dto.getPrice());
         order.setExpiryDate(dto.getExpiryDate());
 
-        return orderRepository.save(order);
+        SupplierOrder savedOrder = orderRepository.save(order);
+
+        // If the order is posted with status "Delivered", automatically create a new Product.
+        if (savedOrder.getStatus() != null && savedOrder.getStatus().equalsIgnoreCase("Delivered")) {
+            Product newProduct = new Product();
+            newProduct.setName(savedOrder.getProductName());
+            newProduct.setQuantity(savedOrder.getQuantity());
+            // Calculate unit price (order total price divided by quantity)
+            double unitPrice = (savedOrder.getQuantity() != null && savedOrder.getQuantity() != 0 && savedOrder.getPrice() != null)
+                    ? savedOrder.getPrice() / savedOrder.getQuantity() : 0.0;
+            newProduct.setPrice(unitPrice);
+            newProduct.setExpiryDate(savedOrder.getExpiryDate());
+            newProduct.setIngredient(savedOrder.getIngredient());
+            productRepository.save(newProduct);
+        }
+
+        return savedOrder;
     }
+
 
     @PutMapping("{id}")
     public SupplierOrder updateSupplierOrder(@PathVariable("id") Long id, @RequestBody SupplierOrderDto dto) {
