@@ -109,4 +109,8 @@ public class Product {
 
     public void setIngredient(Ingredient ingredient) {this.ingredient = ingredient; }
 
+    public String getIngredientCode() {
+        return ingredient != null ? ingredient.getIngredientCode() : null;
+    }
+
 }
