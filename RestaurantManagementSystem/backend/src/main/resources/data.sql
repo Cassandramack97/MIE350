@@ -42,48 +42,48 @@ INSERT INTO menu_items (id, name, description, price) VALUES
 -- Menu Item Ingredients
 INSERT INTO menu_item_ingredients (menu_item_id, ingredient_code, quantity, unit) VALUES
 -- Grilled Chicken Salad
-(1111, 7, 200, 'grams'),
-(1111, 1, 150, 'grams'),
-(1111, 2, 75, 'grams'),
+(1111, 7, 0.2, 'whole'),
+(1111, 1, 1.5, 'whole'),
+(1111, 2, 0.75, 'whole'),
 (1111, 4, 2, 'whole'),
 -- Classic Pasta
 (2222, 1, 2, 'whole'),
-(2222, 10, 300, 'grams'),
-(2222, 8, 200, 'grams'),
+(2222, 10, 1.5, 'whole'),
+(2222, 8, 1, 'whole'),
 -- Fried Egg
 (3333, 4, 1, 'whole'),
 (3333, 3, 1, 'whole'),
 -- Vegetable Stir Fry
-(4444, 17, 100, 'grams'),
-(4444, 11, 50, 'grams'),
-(4444, 13, 75, 'grams'),
-(4444, 9, 250, 'grams'),
-(4444, 16, 20, 'ml'),
+(4444, 17, 5, 'whole'),
+(4444, 11, 1, 'whole'),
+(4444, 13, 0.75, 'whole'),
+(4444, 9, 0.250, 'whole'),
+(4444, 16, 0.02, 'whole'),
 -- Cheese Omelet
 (5555, 4, 2, 'whole'),
-(5555, 5, 50, 'grams'),
-(5555, 15, 10, 'grams'),
+(5555, 5, 1, 'whole'),
+(5555, 15, 10, 'whole'),
 -- Beef Burger
-(6666, 8, 200, 'grams'),
+(6666, 8, 0.5, 'whole'),
 (6666, 6, 1, 'whole'),
-(6666, 2, 25, 'grams'),
-(6666, 5, 30, 'grams'),
+(6666, 2, 3, 'whole'),
+(6666, 5, 2, 'whole'),
 -- Fish and Chips
-(7777, 21, 250, 'grams'),
-(7777, 19, 200, 'grams'),
-(7777, 23, 50, 'grams'),
+(7777, 21, 3, 'whole'),
+(7777, 19, 2, 'whole'),
+(7777, 23, 0.5, 'whole'),
 -- Chicken Pasta
-(8888, 7, 180, 'grams'),
-(8888, 10, 250, 'grams'),
-(8888, 5, 40, 'grams'),
-(8888, 12, 10, 'grams'),
-(8888, 25, 50, 'ml'),
+(8888, 7, 0.8, 'whole'),
+(8888, 10, 1.5, 'whole'),
+(8888, 5, 3, 'whole'),
+(8888, 12, 2, 'whole'),
+(8888, 25, 1.5, 'whole'),
 -- Veggie Salad
-(9999, 2, 100, 'grams'),
-(9999, 20, 75, 'grams'),
-(9999, 18, 50, 'grams'),
-(9999, 16, 15, 'ml'),
-(9999, 14, 1, 'pinch');
+(9999, 2, 1, 'whole'),
+(9999, 20, 1, 'whole'),
+(9999, 18, 2, 'whole'),
+(9999, 16, 1, 'whole'),
+(9999, 14, 0.02, 'whole');
 
 -- PRODUCTS
 INSERT INTO PRODUCTS (NAME, QUANTITY, PRICE, EXPIRY_DATE, INGREDIENT_CODE) VALUES
