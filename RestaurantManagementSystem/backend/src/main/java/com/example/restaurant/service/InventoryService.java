@@ -104,8 +104,8 @@ public class InventoryService {
                 if (requiredQuantity <= 0) break;
 
                 // Deduct from this product
-                int availableInProduct = product.getQuantity();
-                int quantityToDeduct = Math.min(availableInProduct, (int)requiredQuantity);
+                double availableInProduct = product.getQuantity();
+                double quantityToDeduct = Math.min(availableInProduct, requiredQuantity);
 
                 product.setQuantity(availableInProduct - quantityToDeduct);
                 productRepository.save(product);

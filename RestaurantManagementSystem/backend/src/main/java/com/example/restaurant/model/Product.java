@@ -28,7 +28,7 @@ public class Product {
     /**
      * Current quantity in stock (e.g. number of units).
      */
-    private int quantity;
+    private double quantity;
 
     /**
      * Price (per unit or per some consistent measure).
@@ -51,7 +51,7 @@ public class Product {
         // Default constructor for JPA
     }
 
-    public Product(String name, int quantity, double price, LocalDate expiryDate, Ingredient ingredient) {
+    public Product(String name, double quantity, double price, LocalDate expiryDate, Ingredient ingredient) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -77,11 +77,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
