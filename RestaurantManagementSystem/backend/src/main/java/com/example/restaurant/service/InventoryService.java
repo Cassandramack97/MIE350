@@ -107,7 +107,10 @@ public class InventoryService {
                 double availableInProduct = product.getQuantity();
                 double quantityToDeduct = Math.min(availableInProduct, requiredQuantity);
 
-                product.setQuantity(availableInProduct - quantityToDeduct);
+                double newQuantity = availableInProduct - quantityToDeduct;
+                newQuantity = Math.round(newQuantity * 100.0) / 100.0;
+
+                product.setQuantity(newQuantity);
                 productRepository.save(product);
 
                 // Reduce required quantity
