@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c0119f7-a281-4666-ba11-fc231e76205f" name="Changes" comment="changed IngredientCode from String to Long">
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/main/java/com/example/restaurant/model/MenuItemIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/classes/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/target/test-classes/com/example/cms/IngredientControllerTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/CustomerOrderControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/CustomerOrderControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/InventoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/InventoryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/MenuItemControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/MenuItemControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/SupplierControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagementSystem/backend/src/test/java/com/example/cms/SupplierControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "danielmendesandrei"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;danielmendesandrei&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Cassandramack97/MIE350.git",
-    "accountId": "a05fb0b2-cc54-499d-97e4-1e5f7b972df1"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cassandramack97/MIE350.git&quot;,
+    &quot;accountId&quot;: &quot;a05fb0b2-cc54-499d-97e4-1e5f7b972df1&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,7 +56,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/Gabriel/Downloads/MIE350-92d21b7adadb94b09bdd6edaaaa395be433e1acb",
+    "last_opened_file_path": "/Users/Gabriel/Downloads/MIE350",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,6 +68,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,6 +86,7 @@
       <updated>1743881715489</updated>
       <workItem from="1743887172535" duration="2631000" />
       <workItem from="1743897452293" duration="2225000" />
+      <workItem from="1744058655217" duration="102000" />
     </task>
     <task id="LOCAL-00001" summary="added ingredientCode to product json">
       <option name="closed" value="true" />

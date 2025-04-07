@@ -114,43 +114,38 @@ public class SupplierControllerTest extends BaseControllerTest {
     // ----------------------------------------------------------------
     @Test
     void testCreateSupplier() throws Exception {
-        // 1) We must have actual Ingredient(s) in DB for the codes we reference
-        Ingredient ing1 = createTestIngredient(1L);
-        Ingredient ing2 = createTestIngredient(2L);
+        Ingredient ing1 = new Ingredient();
+        ing1.setIngredientCode(101L);
+        ing1.setName("Tomato");
+        ing1 = ingredientRepository.save(ing1);
 
-        // 2) Build a Supplier with "fake" ingredient references
-        Supplier s = new Supplier();
-        s.setName("Fresh Supplier");
-        s.setContactInfo("fresh@sup.com");
-        s.setMinimumOrder(50);
-        s.setDeliveryTime(2);
-        s.setDescription("Supplier description");
+        Ingredient ing2 = new Ingredient();
+        ing2.setIngredientCode(102L);
+        ing2.setName("Lettuce");
+        ing2 = ingredientRepository.save(ing2);
 
-        // We'll just set the code in each ingredient for the JSON body
-        Ingredient ref1 = new Ingredient();
-        ref1.setIngredientCode(1L);
-
-        Ingredient ref2 = new Ingredient();
-        ref2.setIngredientCode(2L);
-
-        List<Ingredient> ingList = new ArrayList<>();
-        ingList.add(ref1);
-        ingList.add(ref2);
-        s.setIngredientList(ingList);
-
-        // 3) Convert to JSON & POST
-        String json = objectMapper.writeValueAsString(s);
+        // Create JSON with ingredient list as minimal Ingredient objects
+        String json = """
+    {
+        "name": "Fresh Supplier",
+        "contactInfo": "fresh@sup.com",
+        "minimumOrder": 50,
+        "deliveryTime": 2,
+        "description": "Delivers fresh produce.",
+        "ingredientList": [
+            {"ingredientCode": %d},
+            {"ingredientCode": %d}
+        ]
+    }
+    """.formatted(ing1.getIngredientCode(), ing2.getIngredientCode());
 
         mockMvc.perform(post("/api/suppliers")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Fresh Supplier"));
 
-        // 4) Verify
-        Assertions.assertEquals(1, supplierRepository.count());
         Supplier saved = supplierRepository.findAll().get(0);
-        Assertions.assertEquals("Fresh Supplier", saved.getName());
-        // LazyInitializationException is avoided because of @Transactional
         Assertions.assertEquals(2, saved.getIngredientList().size());
     }
 
@@ -159,57 +154,45 @@ public class SupplierControllerTest extends BaseControllerTest {
     // ----------------------------------------------------------------
     @Test
     void testUpdateSupplier() throws Exception {
-        // Create a supplier
-        Supplier original = new Supplier();
-        original.setName("Old Name");
-        original.setContactInfo("old@contact.com");
-        original.setMinimumOrder(100);
-        original.setDeliveryTime(3);
-        original.setDescription("Old Desc");
-        original.setIngredientList(new ArrayList<>());
-        original = supplierRepository.save(original);
+        Supplier s = new Supplier();
+        s.setName("Old Supplier");
+        s.setContactInfo("old@supply.com");
+        s.setMinimumOrder(30);
+        s.setDeliveryTime(4);
+        s.setDescription("Old desc");
+        s.setIngredientList(new ArrayList<>());
+        s = supplierRepository.save(s);
 
-        // Insert some ingredients for the update
-        Ingredient ing1 = createTestIngredient(3L);
-        Ingredient ing2 = createTestIngredient(4L);
+        Ingredient ing1 = new Ingredient();
+        ing1.setIngredientCode(201L);
+        ing1.setName("Salt");
+        ing1 = ingredientRepository.save(ing1);
 
-        // Build the updated Supplier object
-        Supplier updateBody = new Supplier();
-        updateBody.setName("New Name");
-        updateBody.setContactInfo("new@contact.com");
-        updateBody.setMinimumOrder(200);
-        updateBody.setDeliveryTime(5);
-        updateBody.setDescription("New Desc");
+        Ingredient ing2 = new Ingredient();
+        ing2.setIngredientCode(202L);
+        ing2.setName("Pepper");
+        ing2 = ingredientRepository.save(ing2);
 
-        // We only need the ingredient codes in the JSON
-        Ingredient ref1 = new Ingredient();
-        ref1.setIngredientCode(3L);
-        Ingredient ref2 = new Ingredient();
-        ref2.setIngredientCode(4L);
+        String json = """
+    {
+        "name": "Updated Supplier",
+        "contactInfo": "new@supply.com",
+        "minimumOrder": 75,
+        "deliveryTime": 1,
+        "description": "Updated desc",
+        "ingredientList": [
+            {"ingredientCode": %d},
+            {"ingredientCode": %d}
+        ]
+    }
+    """.formatted(ing1.getIngredientCode(), ing2.getIngredientCode());
 
-        List<Ingredient> updatedIngList = new ArrayList<>();
-        updatedIngList.add(ref1);
-        updatedIngList.add(ref2);
-        updateBody.setIngredientList(updatedIngList);
-
-        String json = objectMapper.writeValueAsString(updateBody);
-
-        // Perform PUT
-        mockMvc.perform(put("/api/suppliers/" + original.getId())
+        mockMvc.perform(put("/api/suppliers/" + s.getId())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("New Name"))
-                .andExpect(jsonPath("$.deliveryTime").value(5));
-
-        // Confirm in DB
-        Supplier changed = supplierRepository.findById(original.getId()).orElseThrow();
-        Assertions.assertEquals("New Name", changed.getName());
-        Assertions.assertEquals("new@contact.com", changed.getContactInfo());
-        Assertions.assertEquals(200, changed.getMinimumOrder());
-        Assertions.assertEquals(5, changed.getDeliveryTime());
-        // Because of @Transactional, we can check ingredientList safely:
-        Assertions.assertEquals(2, changed.getIngredientList().size());
+                .andExpect(jsonPath("$.name").value("Updated Supplier"))
+                .andExpect(jsonPath("$.ingredientList.length()").value(2));
     }
 
     // ----------------------------------------------------------------

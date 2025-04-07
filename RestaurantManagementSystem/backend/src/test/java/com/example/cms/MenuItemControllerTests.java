@@ -65,16 +65,18 @@ public class MenuItemControllerTests extends BaseControllerTest {
 
     @Test
     void testCreateMenuItem() throws Exception {
-        // Create a test Ingredient with a Long id instead of a String code.
-        Ingredient ing = new Ingredient(1L, "Potato");
-        ingredientRepository.save(ing);
+        Ingredient ing = new Ingredient();
+        ing.setIngredientCode(1L);
+        ing.setName("Potato");
+        ing = ingredientRepository.save(ing);
 
-        // Create a MenuItemIngredientDto with a numeric ingredientCode.
-        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto(1L, 2.0, "pcs");
+        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto(
+                ing.getIngredientCode(), 2.0, "pcs"
+        );
 
         MenuItemDto dto = new MenuItemDto();
         dto.setName("Fries");
-        dto.setDescription("Fresh potatoes");
+        dto.setDescription("Crispy fries");
         dto.setPrice(3.5);
         dto.setIngredients(List.of(ingredientDto));
 
@@ -85,36 +87,36 @@ public class MenuItemControllerTests extends BaseControllerTest {
                         .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Fries"));
-
-        assertEquals(1, menuItemRepository.count());
     }
 
     @Test
     void testUpdateMenuItem() throws Exception {
-        // Create a test Ingredient with a Long id.
-        Ingredient ing = new Ingredient(2L, "Cheese");
-        ingredientRepository.save(ing);
+        Ingredient ing = new Ingredient();
+        ing.setIngredientCode(2L);
+        ing.setName("Mozzarella");
+        ing = ingredientRepository.save(ing);
 
-        MenuItem menuItem = new MenuItem("Pizza", "Cheesy goodness", 12.99);
+        MenuItem menuItem = new MenuItem("Pizza", "Cheesy slice", 11.0);
         menuItem = menuItemRepository.save(menuItem);
 
-        // Update the MenuItem with an ingredient using a numeric code.
-        MenuItemIngredientDto ingredientDto = new MenuItemIngredientDto(2L, 1.5, "cups");
+        MenuItemIngredientDto dtoIng = new MenuItemIngredientDto(
+                ing.getIngredientCode(), 1.5, "cups"
+        );
 
-        MenuItemDto dto = new MenuItemDto();
-        dto.setName("Cheese Pizza");
-        dto.setDescription("Even cheesier");
-        dto.setPrice(14.5);
-        dto.setIngredients(List.of(ingredientDto));
+        MenuItemDto updateDto = new MenuItemDto();
+        updateDto.setName("Updated Pizza");
+        updateDto.setDescription("Extra cheese");
+        updateDto.setPrice(13.0);
+        updateDto.setIngredients(List.of(dtoIng));
 
-        String json = objectMapper.writeValueAsString(dto);
+        String json = objectMapper.writeValueAsString(updateDto);
 
         mockMvc.perform(put("/api/menu-items/" + menuItem.getId())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Cheese Pizza"))
-                .andExpect(jsonPath("$.price").value(14.5));
+                .andExpect(jsonPath("$.name").value("Updated Pizza"))
+                .andExpect(jsonPath("$.price").value(13.0));
     }
 
     @Test

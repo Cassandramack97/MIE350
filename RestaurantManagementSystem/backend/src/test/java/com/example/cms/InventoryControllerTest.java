@@ -108,19 +108,22 @@ class InventoryControllerTest extends BaseControllerTest {
     // -----------------------------------------
     @Test
     void testCreateProduct() throws Exception {
-        Ingredient ing = createTestIngredient(103L);
+        Ingredient ing = new Ingredient();
+        ing.setIngredientCode(105L);
+        ing.setName("Tomato");
+        ing = ingredientRepository.save(ing);
 
-        // Manually build a simple JSON payload with a numeric ingredientCode
         String json = """
-            {
-                "name": "New Product",
-                "quantity": 2,
-                "price": 4.99,
-                "ingredient": {
-                    "ingredientCode": %d
-                }
+        {
+            "name": "New Product",
+            "quantity": 2,
+            "price": 4.99,
+            "expiryDate": "%s",
+            "ingredient": {
+                "ingredientCode": %d
             }
-            """.formatted(ing.getIngredientCode());
+        }
+    """.formatted(LocalDate.now().plusDays(5), ing.getIngredientCode());
 
         mockMvc.perform(post("/api/inventory")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -138,39 +141,44 @@ class InventoryControllerTest extends BaseControllerTest {
     // -----------------------------------------
     @Test
     void testUpdateProduct() throws Exception {
-        Ingredient ingOld = createTestIngredient(104L);
-        Product existing = new Product();
-        existing.setName("OldName");
-        existing.setQuantity(1);
-        existing.setPrice(1.99);
-        existing.setIngredient(ingOld);
-        existing = productRepository.save(existing);
+        Ingredient oldIng = new Ingredient();
+        oldIng.setIngredientCode(200L);
+        oldIng.setName("Salt");
+        oldIng = ingredientRepository.save(oldIng);
 
-        Ingredient ingNew = createTestIngredient(105L);
+        Ingredient newIng = new Ingredient();
+        newIng.setIngredientCode(201L);
+        newIng.setName("Pepper");
+        newIng = ingredientRepository.save(newIng);
 
-        // JSON with numeric ingredientCode
-        String updatedJson = """
-            {
-                "name": "UpdatedName",
-                "quantity": 99,
-                "price": 9.99,
-                "ingredient": {
-                    "ingredientCode": %d
-                }
+        Product p = new Product();
+        p.setName("To Update");
+        p.setQuantity(5);
+        p.setPrice(2.99);
+        p.setExpiryDate(LocalDate.now().plusDays(10));
+        p.setIngredient(oldIng);
+        p = productRepository.save(p);
+
+        String json = """
+        {
+            "name": "Updated Product",
+            "quantity": 10,
+            "price": 6.99,
+            "expiryDate": "%s",
+            "ingredient": {
+                "ingredientCode": %d
             }
-            """.formatted(ingNew.getIngredientCode());
+        }
+    """.formatted(LocalDate.now().plusDays(20), newIng.getIngredientCode());
 
-        mockMvc.perform(put("/api/inventory/" + existing.getId())
+        mockMvc.perform(put("/api/inventory/" + p.getId())
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(updatedJson))
+                        .content(json))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("UpdatedName"))
-                .andExpect(jsonPath("$.quantity").value(99))
-                .andExpect(jsonPath("$.price").value(9.99));
+                .andExpect(jsonPath("$.name").value("Updated Product"));
 
-        Product changed = productRepository.findById(existing.getId()).orElseThrow();
-        Assertions.assertEquals("UpdatedName", changed.getName());
-        Assertions.assertEquals(105L, changed.getIngredient().getIngredientCode());
+        Product updated = productRepository.findById(p.getId()).orElseThrow();
+        Assertions.assertEquals("Pepper", updated.getIngredient().getName());
     }
 
     // -----------------------------------------

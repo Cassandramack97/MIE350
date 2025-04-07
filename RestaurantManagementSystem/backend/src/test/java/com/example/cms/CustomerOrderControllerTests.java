@@ -33,7 +33,7 @@ public class CustomerOrderControllerTests extends BaseControllerTest {
     private MenuItemRepository menuItemRepository;
 
     private final ObjectMapper objectMapper = new ObjectMapper()
-    .findAndRegisterModules();
+            .findAndRegisterModules();
 
     @BeforeEach
     void setup() {
@@ -75,19 +75,20 @@ public class CustomerOrderControllerTests extends BaseControllerTest {
 
     @Test
     void testCreateCustomerOrder() throws Exception {
-        MenuItem menuItem = new MenuItem("Wings", "Spicy", 8.5);
+        MenuItem menuItem = new MenuItem("Wings", "Spicy and crispy", 8.5);
         menuItem = menuItemRepository.save(menuItem);
 
-        CustomerOrder newOrder = new CustomerOrder();
-        newOrder.setMenuItem(menuItem);
-        newOrder.setDate(LocalDate.now());
-        newOrder.setQuantity(3);
-
-        String json = objectMapper.writeValueAsString(newOrder);
+        String json = """
+    {
+        "menuItem": { "id": %d },
+        "quantity": 3,
+        "date": "%s"
+    }
+    """.formatted(menuItem.getId(), LocalDate.now());
 
         mockMvc.perform(post("/api/customerOrder")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.menuItem.name").value("Wings"))
                 .andExpect(jsonPath("$.quantity").value(3));
@@ -97,27 +98,26 @@ public class CustomerOrderControllerTests extends BaseControllerTest {
 
     @Test
     void testUpdateCustomerOrder() throws Exception {
-        MenuItem oldItem = new MenuItem("Soup", "Hot", 6.0);
-        MenuItem newItem = new MenuItem("Salad", "Fresh", 7.5);
-        oldItem = menuItemRepository.save(oldItem);
-        newItem = menuItemRepository.save(newItem);
+        MenuItem item1 = menuItemRepository.save(new MenuItem("Soup", "Warm and hearty", 6.0));
+        MenuItem item2 = menuItemRepository.save(new MenuItem("Salad", "Crisp greens", 7.5));
 
         CustomerOrder order = new CustomerOrder();
-        order.setMenuItem(oldItem);
+        order.setMenuItem(item1);
         order.setDate(LocalDate.now().minusDays(1));
         order.setQuantity(1);
         order = customerOrderRepository.save(order);
 
-        CustomerOrder updatedOrder = new CustomerOrder();
-        updatedOrder.setMenuItem(newItem);
-        updatedOrder.setDate(LocalDate.now());
-        updatedOrder.setQuantity(2);
-
-        String json = objectMapper.writeValueAsString(updatedOrder);
+        String json = """
+    {
+        "menuItem": { "id": %d },
+        "quantity": 2,
+        "date": "%s"
+    }
+    """.formatted(item2.getId(), LocalDate.now());
 
         mockMvc.perform(put("/api/customerOrder/" + order.getId())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(json))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.menuItem.name").value("Salad"))
                 .andExpect(jsonPath("$.quantity").value(2));
