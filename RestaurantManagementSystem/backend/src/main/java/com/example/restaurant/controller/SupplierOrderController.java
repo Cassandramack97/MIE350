@@ -64,7 +64,10 @@ public class SupplierOrderController {
         order.setQuantity(dto.getQuantity());
         order.setStatus(dto.getStatus());
         order.setDatePlaced(dto.getDatePlaced());
-        order.setDateDelivered(dto.getDateDelivered());
+        // Calculate date delivered based on date placed and supplier delivery time.
+        if (dto.getDatePlaced() != null && supplier.getDeliveryTime() != null) {
+            order.setDateDelivered(dto.getDatePlaced().plusDays(supplier.getDeliveryTime()));
+        }
         order.setProductName(dto.getProductName());
         order.setPrice(dto.getPrice());
         order.setExpiryDate(dto.getExpiryDate());
@@ -102,7 +105,10 @@ public class SupplierOrderController {
                     order.setQuantity(dto.getQuantity());
                     order.setStatus(dto.getStatus());
                     order.setDatePlaced(dto.getDatePlaced());
-                    order.setDateDelivered(dto.getDateDelivered());
+                    // Calculate date delivered based on date placed and supplier delivery time.
+                    if (dto.getDatePlaced() != null && supplier.getDeliveryTime() != null) {
+                        order.setDateDelivered(dto.getDatePlaced().plusDays(supplier.getDeliveryTime()));
+                    }
                     order.setProductName(dto.getProductName());
                     order.setPrice(dto.getPrice());
                     order.setExpiryDate(dto.getExpiryDate());
@@ -120,7 +126,10 @@ public class SupplierOrderController {
                     order.setQuantity(dto.getQuantity());
                     order.setStatus(dto.getStatus());
                     order.setDatePlaced(dto.getDatePlaced());
-                    order.setDateDelivered(dto.getDateDelivered());
+                    // Calculate date delivered based on date placed and supplier delivery time.
+                    if (dto.getDatePlaced() != null && supplier.getDeliveryTime() != null) {
+                        order.setDateDelivered(dto.getDatePlaced().plusDays(supplier.getDeliveryTime()));
+                    }
                     order.setProductName(dto.getProductName());
                     order.setPrice(dto.getPrice());
                     order.setExpiryDate(dto.getExpiryDate());
